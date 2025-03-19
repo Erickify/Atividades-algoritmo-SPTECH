@@ -1,0 +1,61 @@
+<!--
+
+Crie um programa o qual:  
+
+a) Pergunte uma nota de um aluno  
+
+b) Ao clicar em "Avaliar aluno"...  
+
+c) Caso a nota for entre 0 e 10, exibir um alert com a frase "Nota válida!"  
+
+d) Caso a nota não estiver no intervalo definido em c), exibir um alert com a frase "Onde já se viu nota menor que 0 e maior que 10?!"  
+
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota</title>
+</head>
+
+<body>
+
+    <h1>
+        Digite a nota do aluno
+    </h1>
+
+    <input type="text" name="" id="inpt_1">
+
+
+    <button onclick="verificar()">Avaliar aluno</button>
+
+    <div id="div_msg">
+
+        <p id="p_msg">
+
+        </p>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+
+    function verificar() {
+
+        var nota = Number(inpt_1.value)
+
+        if (nota >= 0 && nota <= 10) {
+            alert(`Nota válida!`)
+        } else {
+            alert(`Onde já se viu nota menor que 0 e maior que 10?!`)
+        }
+    }
+
+</script>

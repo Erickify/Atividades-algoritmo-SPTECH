@@ -1,0 +1,65 @@
+<!--
+
+    Crie um programa o qual:  
+
+a) Pergunte uma nota de um aluno  
+
+b) Ao clicar em "Avaliar aluno"...  
+
+c) Caso a nota seja menor que 6, exibir um alert com a frase "Aluno não aprovado"  
+
+d) Caso a nota seja entre 8,5 e 10, exibir um alert com a frase "Aluno Exemplar!"  
+
+e) Caso a nota seja entre 6 e menor que 8,5, exibir um alert com a frase "Aluno comum e aprovado"  
+
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota 2</title>
+</head>
+
+<body>
+
+    <h1>
+        Digite a nota do aluno
+    </h1>
+
+    <input type="text" name="" id="inpt_1">
+
+
+    <button onclick="verificar()">Avaliar aluno</button>
+
+    <div id="div_msg">
+
+        <p id="p_msg">
+
+        </p>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+
+    function verificar() {
+
+        var nota = Number(inpt_1.value)
+
+        if (nota < 6) {
+            p_msg.innerHTML = `Aluno não aprovado`
+        } else if (nota >= 6 && nota < 8.5) {
+            p_msg.innerHTML = `Aluno comum e aprovado`
+        } else {
+            p_msg.innerHTML = `Aluno Exemplar!`
+        }
+    }
+
+</script>
