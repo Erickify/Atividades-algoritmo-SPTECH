@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cartão fidelidade</title>
+</head>
+
+<body>
+
+    <h1>
+        Digite a quantidade de passagens que quer adiquirir
+    </h1>
+
+    <input type="text" name="" id="inpt_1">
+
+
+    <button onclick="verificar()">Comprar</button>
+
+    <div id="div_msg">
+
+        <p id="p_msg">
+
+        </p>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+
+    function verificar() {
+
+        var pass = Number(inpt_1.value)
+
+        var valor = 4.40 * pass
+
+
+        if (pass >= 8 && pass <= 50) {
+
+            if (pass >= 8 && pass <= 19) {
+
+                p_msg.innerHTML = `Total a pagar: R$${valor * 0.97}`
+
+            } else if (pass >= 20 && pass <= 49) {
+
+                p_msg.innerHTML = `Total a pagar: R$${valor * 0.95}`
+
+            } else if (pass == 50) {
+
+                p_msg.innerHTML = `Total a pagar: R$${valor * 0.93}`
+
+            }
+
+        } else {
+            alert(`Quantidade inválida para o Fidelidade!`)
+        }
+
+    }
+
+</script>
+
+<!--
+
+Crie um minissistema de recarga do "cartão fidelidade" do metrô de São Paulo em que:  
+
+a) Solicite ao usuário que informe a quantidade de passagens que deseja adquirir  
+
+b) Ao clicar em "Comprar", caso a quantidade seja entre 8 e 50, implemente as regras entre os itens c), d) e e). Caso contrário, exiba apenas o alert "Quantidade inválida para o Fidelidade!"  
+
+c) Caso a quantidade for entre 8 e 19, aplique um desconto de 3% no valor da passagem de metrô  
+
+d) Caso a quantidade for entre 20 e 49, aplique um desconto de 5% no valor da passagem de metrô  
+
+e) Caso a quantidade for 50, aplique um desconto de 7% no valor da passagem de metrô  
+
+f) Considere que o valor da passagem é R$4,40  
+
+g) Caso a quantidade de passagens veja válida, conforme a regra em b), exiba o valor total a pagar numa frase abaixo do botão "Comprar";  
+
+Ex: 50 passagens devem exibir "Total a pagar: R$204.60" 
+
+
+-->

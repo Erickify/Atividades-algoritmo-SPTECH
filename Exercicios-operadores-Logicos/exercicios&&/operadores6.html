@@ -1,0 +1,78 @@
+<!--
+
+Crie um programa o qual:  
+
+a) Pergunte uma nota de um aluno  
+
+b) Pergunte a frequência de um aluno  
+
+c) Ao clicar em "Avaliar aluno"...  
+
+d) Caso a nota for a partir de 6 e a frequência for a partir de 75, exibir um alert com a frase "Parabéns! Aprovado!", caso contrário, exibir um alert com "Infelizmente, não foi desta vez"  
+
+  
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota</title>
+</head>
+
+<body>
+
+    <h1>
+        Digite a nota do aluno
+    </h1>
+
+    <input type="text" name="" id="inpt_1">
+
+
+    <h1>
+        Digite a frequencia do aluno
+    </h1>
+
+    <input type="text" name="" id="inpt_2">
+
+
+    <button onclick="verificar()">Avaliar aluno</button>
+
+    <div id="div_msg">
+
+        <p id="p_msg">
+
+        </p>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+
+    function verificar() {
+
+        var nota = Number(inpt_1.value)
+
+        var frequencia = Number(inpt_2.value)
+
+        if (nota >= 6 ) {
+
+           alert(`Parabéns! Aprovado!`)
+        
+        } else {
+
+            alert(`Infelizmente, não foi desta vez`)
+
+        }
+
+    }
+
+</script>

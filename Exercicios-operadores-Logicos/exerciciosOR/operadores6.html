@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+
+
+    <h1>
+        Calculadora de cansaço do aluno SPTech
+    </h1>
+
+    <br>
+
+    <h1>
+        Digite Meio de transporte
+    </h1>
+
+    <select name="" id="sel_1">
+
+        <option value="1">Ônibus</option>
+        <option value="2">Metrô</option>
+        <option value="3">Carro</option>
+        <option value="4">Bicicleta</option>
+        <option value="5">Uber</option>
+
+    </select>
+
+
+    <button onclick="verificar()">Calcular cansaço</button>
+
+    <div id="div_msg">
+
+        <p id="p_msg">
+
+        </p>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+
+    function verificar() {
+
+        var var1 = Number(sel_1.value)
+
+        if (var1 == 3 || var1 == 5) {
+            alert(`Tá tranquilo...`)
+        } else if (var1 == 1 || var1 == 2) {
+
+            alert('Um pouco cansado')
+
+        } else {
+            alert(`Vish... vive cansado.`)
+        }
+
+    }
+
+</script>
+
+<!--
+
+Crie um programa o qual: 
+
+a) Tenha o seguinte texto no topo: 
+
+    "Calculadora de cansaço do aluno SPTech" 
+
+b) Tenha o texto "Meio de transporte" e uma input para o usuário inserir o meio de transporte dele, podendo ser: 
+
+    Ônibus 
+
+    Metrô 
+
+    Carro 
+
+    Bicicleta 
+
+    Uber 
+
+c) Tenha o botão "Calcular cansaço" que ao clicar mostrar em um alerta o nível de cansaço do usuário. 
+
+d) Se o meio de transporte escolhido for "Carro" OU "Uber", exiba em um alert: "Tá tranquilo..." 
+
+e) Se o meio de transporte escolhido for "Metrô" OU "Ônibus", exiba em um alert: "Um pouco cansado". 
+
+f) Se o meio de transporte escolhido for "Bicicleta", exiba em um alert: "Vish... vive cansado." 
+
+
+-->

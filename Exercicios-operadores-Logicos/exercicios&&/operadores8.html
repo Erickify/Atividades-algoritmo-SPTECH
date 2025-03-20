@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sptech</title>
+</head>
+
+<body>
+
+    <h1>
+        Digite o login
+    </h1>
+
+    <input type="text" name="" id="inpt_1">
+
+    <h1>
+        Digite a senha
+    </h1>
+
+    <input type="password" name="" id="inpt_2">
+
+    <h1>
+        Digite o codigo de segurança
+    </h1>
+
+    <input type="password" name="" id="inpt_3">
+
+
+    <button onclick="verificar()">Entrar</button>
+
+    <div id="div_msg">
+
+        <p id="p_msg">
+
+        </p>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+
+    function verificar() {
+
+        var login = inpt_1.value
+
+        var senha = inpt_2.value
+
+        var codigo = inpt_3.value
+
+        if (login == 'SPTech' && senha == 'digital' && codigo == '123' ) {
+            alert(`Usuário autenticado com sucesso`)
+        } else {
+            alert(`Falha na autenticação`)
+        }
+
+    }
+
+</script>
+
+<!--
+
+Crie um programa que simula um pequeno sistema de login assim:  
+
+a) Pergunte o login do usuário; 
+b) Pergunte a senha do usuário; 
+
+c) Pergunte o código de segurança do usuário (é como se fosse uma segunda senha, só isso)  
+
+d) Ao clicar em "Entrar": 
+
+   Caso o login seja "SPTech" e a senha seja "digital" e o código de segurança seja "123", exibir um alert com a frase "Usuário autenticado com sucesso" 
+
+   Caso contrário, exibir um alert com "Falha na autenticação"  
+
+-->
