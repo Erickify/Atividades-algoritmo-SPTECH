@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -12,13 +10,31 @@
 <body>
 
     <h1>
-        Digite
+        Digite a altura inicial
     </h1>
 
     <input type="text" name="" id="inpt_1">
 
+    <h1>
+        Digite a altura final
+    </h1>
 
-    <button onclick="verificar()">Analisar</button>
+    <input type="text" name="" id="inpt_2">
+
+    <h1>
+        Digite o seu nome
+    </h1>
+
+    <input type="text" name="" id="inpt_3">
+
+    <h1>
+        Digite a altura atual
+    </h1>
+
+    <input type="text" name="" id="inpt_4">
+
+
+    <button onclick="verificar()">Verificar Candidato</button>
 
     <div id="div_msg">
 
@@ -37,14 +53,23 @@
 
     function verificar() {
 
-        var var1 = Number(inpt_1.value)
+        var nome = inpt_3.value
 
-        if (var1 < 6) {
-            p_msg.innerHTML = `Aluno não aprovado`
-        } else if (var1 >= 6 && var1 < 8.5) {
-            p_msg.innerHTML = `Aluno comum e aprovado`
+        var alturaI = Number(inpt_1.value)
+        var alturaF = Number(inpt_2.value)
+        var alturaA = Number(inpt_4.value)
+
+        if (alturaI > 1 && alturaF > alturaA) {
+
+            p_msg.innerHTML += `O candidato ${nome}, com altura de ${alturaA} metros, participará do processo de seleção de piloto <br>`
+
         } else {
-            p_msg.innerHTML = `Aluno Exemplar!`
+
+
+            alert(`Intervalo da altura de seleção é inválida! A altura inicial deve ser maior que 1 e a altura final deve ser maior que a altura inicial`)
+
+            p_msg.innerHTML += `Infelizmente, o candidato ${nome}, com altura de ${alturaA} metros, não atende os requisitos da seleção”, caso a altura do candidato NÃO esteja no intervalo informado. <br>`
+
         }
 
     }
