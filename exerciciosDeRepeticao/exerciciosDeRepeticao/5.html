@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 </title>
+</head>
+
+<body>
+
+
+    <h2><b>Estrutura de Repetição while</b></h2>
+
+    <button onclick="contar()">Números cabalísticos</button>
+
+    <div id="div_msg"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function contar() {
+
+        var contador = 0
+
+        div_msg.innerHTML = " "
+
+        while (contador <= 30) {
+
+            
+
+            if ( contador == 3 || contador == 4 || contador == 7 || contador == 10 || contador == 12 ) {
+
+                
+
+                div_msg.innerHTML += ` `
+
+                contador++;
+
+            } else {
+
+                div_msg.innerHTML += `<br><br>${contador}`
+
+                contador++;
+
+
+
+            }
+        }
+
+
+    }
+
+
+</script>
+
+<!-- 
+
+Crie um programa o qual:
+ 
+a) Ao clicar num botão "Números cabalísticos"...   
+
+c) Exiba, debaixo do botão, os números de 1 a 30, um embaixo do outro, PORÉM, não devem aparecer os números cabalísticos 3, 4, 7, 10 e 12.    
+
+OBS: não se atenha ao termo "cabalístico", o que importa é somente travar essa sequência de números! 
+
+
+-->

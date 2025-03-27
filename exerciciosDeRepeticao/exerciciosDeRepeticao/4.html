@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4</title>
+</head>
+<body>
+    
+
+    <h2><b>Estrutura de Repetição while</b></h2>
+
+    <button onclick="contar()">S2 Pares</button>
+
+    <div id="div_msg"></div>
+
+</body>
+</html>
+
+<script>
+
+    function contar() {
+
+        var contador = 0
+
+        div_msg.innerHTML = " "
+
+        while (contador <= 100) {
+
+            // contador--; //contador -=
+            div_msg.innerHTML += `<br><br>${contador}`
+
+            contador = contador + 2; // contador +=1
+        }
+
+    }
+
+
+</script>
+
+<!-- 
+
+Crie um programa o qual:
+ 
+a) Ao clicar num botão "S2 Pares"...  
+
+b) Exiba, debaixo do botão, todos os números pares de 0 a 100, um embaixo do outro   
+
+
+-->

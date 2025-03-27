@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+</head>
+<body>
+    
+
+    <h2><b>Estrutura de Repetição while</b></h2>
+
+    <button onclick="contar()">Diga algo sobre a matéria de Algoritmos</button>
+
+    <div id="div_msg"></div>
+
+</body>
+</html>
+
+<script>
+
+    function contar() {
+
+        var contador = 0
+
+        div_msg.innerHTML = " "
+
+        while (contador < 7) {
+            contador++; // contador +=1
+            // contador--; //contador -=
+            div_msg.innerHTML += `<br><br>${contador}. Tá valedo Brinde?`
+        }
+
+    }
+
+
+</script>
+
+<!-- 
+
+Refaça o programa anterior de tal forma que, antes de cada frase apareça um contador. Ex: Se a frase digitada foi “Boa Tarde” a página ficará assim:   
+
+   1. Boa tarde   
+
+   2. Boa tarde   
+
+   ...   
+
+   7. Boa tarde  
+
+
+
+-->
