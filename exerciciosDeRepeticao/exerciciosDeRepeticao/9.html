@@ -1,47 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3</title>
 </head>
+
 <body>
-    
+
 
     <h2><b>Estrutura de Repetição while</b></h2>
 
-    <h2>Insira uma frase</h2>
+    <h2>Insira o Numero inicial</h2>
 
     <input type="text" id="input_2">
 
-    <h2>Insira a quantidade de vezes</h2>
+    <h2>Insira o numero final</h2>
 
     <input type="text" id="input_1">
 
-    
 
-    <button onclick="contar()">Papagaio</button>
+
+    <button onclick="contar()">S2 Pares</button>
 
     <div id="div_msg"></div>
 
 </body>
+
 </html>
 
 <script>
 
     function contar() {
 
-        var contador = 0
-
-        var frase = input_2.value
+        var inicial = Number(input_2.value)
 
         var limite = Number(input_1.value)
 
-        while (contador < limite) {
+        div_msg.innerHTML = " "
 
-            contador++;
-           
-            alert(frase)
+        while (inicial <= limite) {
+
+
+            if (inicial % 2 == 0) {
+
+                div_msg.innerHTML += `<br><br>${inicial}`
+
+                console.log(inicial)
+
+            }
+
+            inicial++;
+
 
         }
 
@@ -54,10 +65,10 @@
 
 Crie um programa o qual:
  
-a) Pergunte ao usuário um número;  
+a) Solicite um intervalo crescente de valores numéricos    
 
-b) Pergunte ao usuário uma frase.  
+b) Ao clicar num botão "S2 Pares"...   
 
-c) Ao clicar num botão "Papagaio", a frase é exibida N vezes em N alerts, onde N é o número informado em a)    
+c) Exiba, debaixo do botão, todos os números pares contidos no intervalo.  
 
 -->

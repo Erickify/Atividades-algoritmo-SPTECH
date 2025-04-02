@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+</head>
+
+<body>
+
+
+    <h2><b>Estrutura de Repetição while</b></h2>
+
+    <h2>Insira qual Numero de voltas do carro</h2>
+
+    <input type="text" id="input_1">
+
+    
+
+
+    <button onclick="contar()">Iniciar corrida!</button>
+
+    <div id="div_msg"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function contar() {
+
+        contador = 0
+
+
+        var limite = Number(input_1.value)
+
+        div_msg.innerHTML = " "
+
+        while (contador < limite) {
+
+            contador++;
+
+            div_msg.innerHTML += `<br><br>Carro dando a ${contador}ª volta 
+            
+            <br>
+            <br>
+
+            <hr>
+            
+            `
+
+
+        }
+
+        div_msg.innerHTML += `<br><br>Corrida finalizada!`
+
+    }
+
+
+</script>
+
+<!-- 
+
+Crie um programa o qual:
+ 
+a) Pergunte ao usuário quantas voltas um carro dará numa corrida   
+
+b) Ao clicar num botão "Iniciar corrida!"...   
+
+c) Exiba, debaixo do botão, frases como estas:   
+
+       Carro dando a 1ª volta   
+
+       Carro dando a 2ª volta   
+
+       Carro dando a 3ª volta   
+
+d) Até que o carro "termine" a corrida. Nesse caso, exiba abaixo de tudo, somente 1 vez, a frase "Corrida finalizada!"   
+
+-->
