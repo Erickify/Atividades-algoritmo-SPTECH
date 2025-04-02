@@ -87,6 +87,8 @@
 
         var qtd_total = qtdCheesecakes + qtdCupcakes + qtdBrigadeiros + qtdMacarons
 
+        var total = valorCheesecakes * qtdCheesecakes + valorCupcakes * qtdCupcakes + qtdBrigadeiros * valorBrigadeiros + valorMacarons * qtdMacarons
+
         var contador = 0
 
         while (contador_compra <= qtd_total) {
@@ -115,7 +117,7 @@
                 if (valorBrigadeiros >= 0) {
 
 
-                    div_msg.innerHTML += `<br>${contador_compra} <img src=""> R$${valorBrigadeiros}`
+                    div_msg.innerHTML += `<br>${contador_compra} <img src="https://t3.ftcdn.net/jpg/03/83/12/20/360_F_383122083_k3ejtoQ0GclA5VSj4176I3CnCTgV9FKk.jpg"> R$${valorBrigadeiros}`
 
                     contador_compra++;
 
@@ -132,7 +134,7 @@
                 if (valorCupcakes >= 0) {
 
 
-                    div_msg.innerHTML += `<br>${contador_compra} <img src=""> R$${valorCupcakes}`
+                    div_msg.innerHTML += `<br>${contador_compra} <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fbr%2Ffotos%2Fcupcakes-de-flor&psig=AOvVaw3JyJOOiVnNTr3IXPvdfmlu&ust=1743707502490000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJjk4OOGuowDFQAAAAAdAAAAABAE"> R$${valorCupcakes}`
 
                     contador_compra++;
 
@@ -149,7 +151,7 @@
                 if (valorCheesecakes >= 0) {
 
 
-                    div_msg.innerHTML += `<br>${contador_compra} <img src=""> R$${valorCheesecakes}`
+                    div_msg.innerHTML += `<br>${contador_compra} <img src="https://media.gettyimages.com/id/1301304102/pt/foto/cheesecake-slice-on-a-knife.jpg?s=612x612&w=gi&k=20&c=MKa4c0CbGHMQtYJi59004t0Cqs6OjgtWM1i4DCVr49g="> R$${valorCheesecakes}`
 
                     contador_compra++;
 
@@ -161,6 +163,8 @@
 
 
         }
+
+        div_msg.innerHTML += `<br>Com a quantidade de ${qtdMacarons} Macarons, ${qtdBrigadeiros} Brigadeiros, ${qtdCupcakes} Cupcakes e ${qtdCheesecakes} Cheesecakes, a venda totalizará R$${total}`
 
     }
 
