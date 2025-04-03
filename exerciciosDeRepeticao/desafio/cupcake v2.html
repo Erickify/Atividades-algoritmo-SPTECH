@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doceria do Val</title>
+</head>
+
+<style>
+    img {
+        width: 100px;
+        height: 100px;
+    }
+</style>
+
+<body>
+
+    <div id="div_macarons">
+
+        <h1>Macarons</h1>
+        <br>
+        Quantidade <input type="text" name="" id="inp_qtd_macarons">
+        Preço: R$ <input type="text" name="" id="inp_vl_macarons">
+
+    </div>
+
+    <div id="div_brigadeiros">
+
+        <h1>Brigadeiros</h1>
+        <br>
+        Quantidade <input type="text" name="" id="inp_qtd_brigadeiros">
+        Preço: R$ <input type="text" name="" id="inp_vl_brigadeiros">
+
+    </div>
+
+    <div id="div_cupcakes">
+
+        <h1>Cupcakes</h1>
+        <br>
+        Quantidade <input type="text" name="" id="inp_qtd_cupcakes">
+        Preço: R$ <input type="text" name="" id="inp_vl_cupcakes">
+
+    </div>
+
+    <div id="div_cheesecakes">
+
+        <h1>Cheesecakes</h1>
+        <br>
+        Quantidade <input type="text" name="" id="inp_qtd_cheesecakes">
+        Preço: R$ <input type="text" name="" id="inp_vl_cheesecakes">
+
+    </div>
+
+    <br>
+
+    <button onclick="verificar_vendas()">Verificar Vendas</button>
+
+    <div id="div_msg">
+
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+
+    function verificar_vendas() {
+
+        div_msg.innerHTML = ""
+
+        var qtdMacarons = Number(inp_qtd_macarons.value)
+        var valorMacarons = Number(inp_vl_macarons.value)
+
+        var qtdBrigadeiros = Number(inp_qtd_brigadeiros.value)
+        var valorBrigadeiros = Number(inp_vl_brigadeiros.value)
+
+        var qtdCupcakes = Number(inp_qtd_cupcakes.value)
+        var valorCupcakes = Number(inp_vl_cupcakes.value)
+
+        var qtdCheesecakes = Number(inp_qtd_cheesecakes.value)
+        var valorCheesecakes = Number(inp_vl_cheesecakes.value)
+
+        var contador_compra = 1
+
+        var qtd_total = qtdCheesecakes + qtdCupcakes + qtdBrigadeiros + qtdMacarons
+
+        var total = valorCheesecakes * qtdCheesecakes + valorCupcakes * qtdCupcakes + qtdBrigadeiros * valorBrigadeiros + valorMacarons * qtdMacarons
+
+        var contador = 0
+
+        var msg = " "
+
+
+        while (contador_compra <= qtd_total) {
+            if (contador_compra <= qtdMacarons) {
+
+                msg += `<br>${contador_compra} IMG R$${valorMacarons}`
+                
+                contador_compra++;
+
+            } else if (contador_compra <= qtdMacarons + qtdBrigadeiros) {
+
+                msg += `<br>${contador_compra} IMG R$${valorBrigadeiros}`
+
+                contador_compra++;
+            } else if (contador_compra <= qtdMacarons + qtdBrigadeiros + qtdCupcakes) {
+
+                msg += `<br>${contador_compra} IMG R$${valorCupcakes}`
+
+                contador_compra++;
+            } else if (contador_compra <= qtdMacarons + qtdBrigadeiros + qtdCupcakes + qtdCheesecakes) {
+
+                msg += `<br>${contador_compra} IMG R$${valorCheesecakes}`
+
+                contador_compra++;
+            }
+        }
+
+        div_msg.innerHTML = msg
+
+
+    }
+
+
+    // div_msg.innerHTML += `<br>Com a quantidade de ${qtdMacarons} Macarons, ${qtdBrigadeiros} Brigadeiros, ${qtdCupcakes} Cupcakes e ${qtdCheesecakes} Cheesecakes, a venda totalizará R$${total}`
+
+
+
+
+
+
+</script>
+
+<!--
+
+1. Dori Valdossin é dono de uma doceria em São Paulo, onde a sua especialidade são os doces gourmets.
+
+Seu estabelecimento trabalha com diversos tipos de doces gourmets, porém os mais famosos do seu menu são: 
+
+- Macarons: um doce francês feito com duas conchas de amêndoa com recheio no meio, que são populares por sua aparência colorida e delicada, bem como seus sabores únicos;
+
+- Brigadeiros: um doce brasileiro feito com leite condensado, manteiga e chocolate em pó, que nas versões gourmet, geralmente apresentam sabores inovadores e criativos, como creme de avelã, limão siciliano, café, entre outros;
+
+- Cupcakes: mini bolos decorados com glacê e recheados com sabores deliciosos, como baunilha, chocolate, red velvet, entre outros, dos quais são populares em casamentos, festas de aniversário e outros eventos;
+
+- Cheesecakes: uma sobremesa feita com cream cheese, açúcar e biscoitos triturados para a base, nos quais geralmente apresentam sabores como framboesa, caramelo salgado, limão, entre outros;
+
+Para auxiliar Dori, crie um programa o qual: 
+
+a) Solicite a quantidade de cada doce a ser vendido (Macarons, Brigadeiros Gourmets, Cupcakes e Cheesecakes).
+
+b) Solicite o preço da unidade de cada tipo de doce.
+
+c) Ao clicar no botão "Verificar Vendas", caso todos os valores não sejam negativos, prossiga. Caso contrário, exiba uma mensagem de erro explicativa e encerre.
+
+d) De acordo com a quantidade de cada produto informado, exiba um extrato contendo: 
+
+        "NÚMERO DA VENDA   -   IMAGEM DO DOCE   -   R$ VALOR UNITÁRIO"
+
+e) A ordem de listagem dos doces sempre será: 
+
+          Primeiro os "Macarons"
+          Logo após, os "Brigadeiros"
+          Em seguida, os "Cupcakes"
+          Por último, os "Cheesecakes" 
+
+Caso a quantidade informada de algum desses doces seja 0, deve pular para a listagem do próximo doce, continuando a contagem da venda (ou seja, caso o usuário informe "0 macarons", o programa deve pular a exibição dos "Macarons" e começar com o "Brigadeiro" sendo a primeira venda da lista).
+
+f) Ao finalizar a listagem das vendas, deve exibir uma mensagem com uma frase como esta: 
+
+        "Com a quantidade de WWWW Macarons, VVVV Brigadeiros, XXXX Cupcakes e YYYY Cheesecakes, a venda totalizará R$ZZZZ"
+
+OBS: note que são 4 entradas para o item a) e mais 4 entradas para o item b).
+
+OBS II: crie as tags img através do JavaScript para gerar as imagens dos doces dinamicamente, de acordo com cada mensagem exibida, utilizando imagens pequenas (recomendado até 100px)  para facilitar a visualização das linhas.
+
+OBS III: repare que, no exemplo de funcionamento, o programa pula a exibição dos Cupcakes, porém, continua a contagem das vendas sequencialmente.
+
+EXEMPLO DE FUNCIONAMENTO: 
+
+           "Venda 1 - <Imagem de Macaron> - R$3.99"
+
+           "Venda 2 - <Imagem de Macaron> - R$3.99"
+
+           "Venda 3 - <Imagem de Brigadeiro> - R$4.99"
+
+           "Venda 4 - <Imagem de Brigadeiro> - R$4.99"
+
+           "Venda 5 - <Imagem de Brigadeiro> - R$4.99"
+
+           "Venda 6 - <Imagem de Cheesecake> - R$6.99"
+
+           "Venda 7 - <Imagem de Cheesecake> - R$6.99"
+
+           "Com a quantidade de 2 Macarons, 3 Brigadeiros, 0 Cupcakes e 2 Cheesecakes, a venda totalizará R$36.93"
+
+-->
