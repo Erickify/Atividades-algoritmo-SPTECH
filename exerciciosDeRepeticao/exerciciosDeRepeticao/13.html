@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13</title>
+</head>
+
+<body>
+
+    <h2><b>Estrutura de Repetição while</b></h2>
+
+    <h2>informar o intervalo crescente de números</h2>
+
+    <h2>Insira o numero menor</h2>
+    <input type="text" name="" id="inp_1">
+
+    <h2>Insira o numero maior</h2>
+    <input type="text" name="" id="inp_2">
+
+    <button onclick="contar()">Curto 3 e 5!</button>
+
+    <div id="div_msg">
+        <p id="p_msg"></p>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+   function contar() {
+     var numeroMaior = Number(inp_1.value)
+    var numeroMenor = Number(inp_2.value)
+
+    var contador = numeroMenor;
+
+    var msg = ""
+
+    while (contador <= numeroMaior) {
+
+        if (contador % (3 && 5) == 0) {
+
+            msg += `É TRI!É PENTA!<br>`
+
+            contador++
+        } else if (contador % 3 == 0) {
+
+
+            msg += `É TRI!<br>`
+
+            contador++
+        } else if (contador % 5 == 0) {
+
+
+            msg += `É PENTA!<br>`
+
+            contador++
+        } else {
+
+            msg += `<br>${contador}`
+
+            contador++
+        }
+
+        div_msg.innerHTML += msg
+
+
+    }
+}
+    
+
+
+
+</script>
+
+<!-- 13. É tri/penta!
+Crie um programa o qual:
+
+a) Deve ter dois campos para o usuário informar o intervalo crescente de números
+b) Deve ter um botão chamado "Curto 3 e 5!"
+
+c) Ao clicar nesse botão, devem aparecer QUASE todos os números entre o intervalo informado, porém...
+
+d) Se o número for múltiplo de 3, ao invés do número exiba "É TRI!". Se o número for múltiplo de 5, ao invés do número exiba "É PENTA!". Se o número for múltiplo de 3 e também de 5, ao invés do número exiba "É TRI!É PENTA!".
+
+#Ficadica: Use a técnica de dedução de múltiplos por uso do resto da divisão -->

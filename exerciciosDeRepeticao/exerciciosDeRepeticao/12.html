@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11</title>
+</head>
+
+<body>
+
+
+    <h2><b>Estrutura de Repetição while</b></h2>
+
+    <h2>Qual nome da pessoa que o usuário mais ama na vida?</h2>
+
+    <input type="text" id="input_1">
+
+    <h2>O quanto você ama essa pessoa</h2>
+
+    <input type="text" id="input_2">
+
+
+
+
+    <button onclick="contar()">Expressar amor</button>
+
+    <div id="div_msg" >
+        
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function contar() {
+
+        contador = 0
+
+        var nome = input_1.value
+
+        var limite = Number(input_2.value)
+
+        var msg = ""
+
+        while (contador < limite) {
+
+            
+            contador++;
+
+            msg += `<br>${contador}  - ${nome}, eu te amo! Sempre lembre disso!`
+
+
+        }
+
+        div_msg.innerHTML = msg
+
+    }
+
+
+</script>
+
+<!-- 
+
+12. Expressar amor
+Crie um programa o qual:
+
+a) Pergunte o nome da pessoa que o usuário mais ama na vida;  
+
+b) Pergunte o quanto o usuário a ama (um número inteiro);  
+
+c) Ao clicar num botão "Expressar amor", devem aparecer, abaixo dele, N vezes (conforme o valor em b)) a frase indicada em a), como neste exemplo (considerando o nome "Lady Gaga" e que ama "3")   
+
+      1 - Lady Gaga, eu te amo! Sempre lembre disso!   
+
+      2 - Lady Gaga, eu te amo! Sempre lembre disso!   
+
+      3 - Lady Gaga, eu te amo! Sempre lembre disso!   
+
+-->
