@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7</title>
+</head>
+
+<body>
+
+    <h2><b>Estrutura de Repetição while</b></h2>
+
+    <h1>Digite um número (tem que ser entre 20 e 100)</h1>
+
+    <input type="text" id="input_1">
+
+    <button onclick="contar()">Viva o 7!</button>
+
+    <div id="div_msg"></div>
+
+    <script>
+
+        function contar() {
+            
+            var limite = Number(input_1.value);
+            div_msg.innerHTML = "";
+
+
+            if (limite < 0 || limite > 200) {
+                alert("Digite um número válido entre 0 e 200.");
+
+            } else {
+
+                for (var contador = 0; contador <= limite; contador++) {
+                    if (contador % 7 == 0) {
+                        div_msg.innerHTML += `<br>${contador}`;
+                    }
+                    
+                }
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+
+
+<!-- 
+
+Crie um programa o qual:
+ 
+a) Receba um número (tem que estar entre 0 e 200);  
+
+b) Ter um botão chamado "Viva o 7!"   
+
+c) Ao clicar nesse botão, devem aparecer todos os múltiplos de 7 entre 0 e o número informado em a)   
+
+-->

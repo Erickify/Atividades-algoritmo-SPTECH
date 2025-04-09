@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+</head>
+
+<body>
+
+
+    <h2><b>Estrutura de Repetição while</b></h2>
+
+    <h2>Insira o Numero inicial</h2>
+
+    <input type="text" id="input_2">
+
+    <h2>Insira o numero final</h2>
+
+    <input type="text" id="input_1">
+
+
+
+    <button onclick="contar()">S2 Pares</button>
+
+    <div id="div_msg"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function contar() {
+
+        var inicial = Number(input_2.value)
+
+        var limite = Number(input_1.value)
+
+        div_msg.innerHTML = " "
+
+        for (inicial <= limite) {
+
+
+            if (inicial % 2 == 0) {
+
+                div_msg.innerHTML += `<br><br>${inicial}`
+
+                console.log(inicial)
+
+            }
+
+            inicial++;
+
+
+        }
+
+    }
+
+
+</script>
+
+<!-- 
+
+Crie um programa o qual:
+ 
+a) Solicite um intervalo crescente de valores numéricos    
+
+b) Ao clicar num botão "S2 Pares"...   
+
+c) Exiba, debaixo do botão, todos os números pares contidos no intervalo.  
+
+-->

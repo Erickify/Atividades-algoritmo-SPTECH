@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8</title>
+</head>
+
+<body>
+
+
+    <h2><b>Estrutura de Repetição while</b></h2>
+
+    <h2>Insira uma frase</h2>
+
+    <input type="text" id="input_2">
+
+    <h2>Insira a quantidade de vezes</h2>
+
+    <input type="text" id="input_1">
+
+
+
+    <button onclick="contar()">Papagaio</button>
+
+    <div id="div_msg"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function contar() {
+
+       
+
+        var msg = input_2.value
+
+        var frase = " "
+
+        var limite = Number(input_1.value)
+
+        for (var contador = 0; contador < limite; contador++) {
+
+            
+
+            frase = ' ' + msg
+
+
+        }
+
+        
+
+        for ( var contador = 0; contador < limite; contador++
+) {
+
+            
+            alert(frase)
+
+        }
+
+    }
+
+
+</script>
+
+<!-- 
+
+Crie um programa o qual:
+ 
+a) Pergunte ao usuário um número;  
+
+b) Pergunte ao usuário uma frase.  
+
+c) Ao clicar num botão "Papagaio", a frase é exibida N vezes em N alerts, onde N é o número informado em a)    
+
+-->

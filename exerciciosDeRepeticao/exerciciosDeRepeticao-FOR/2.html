@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+</head>
+<body>
+    
+
+    <h2><b>Estrutura de Repetição while</b></h2>
+
+    <button onclick="contar()">Diga algo sobre a matéria de Algoritmos</button>
+
+    <div id="div_msg"></div>
+
+</body>
+</html>
+
+<script>
+
+    function contar() {
+
+        var contador = 0
+
+        div_msg.innerHTML = " "
+
+        for ( var contador = 0 ;contador < 7 ; contador++) {
+             // contador +=1
+            // contador--; //contador -=
+            div_msg.innerHTML += `Tá valedo Brinde?<br><br>`
+        }
+
+    }
+
+
+</script>
+
+<!-- Crie um programa o qual: 
+ 
+a) Tenha um botão "Diga algo sobre a matéria de Algoritmos";  
+
+b) Ao clicar nele, mostre na própria página 7 vezes uma frase a sua escolha, uma abaixo da outra.  
+ -->

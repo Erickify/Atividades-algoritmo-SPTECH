@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11</title>
+</head>
+
+<body>
+
+
+    <h2><b>Estrutura de Repetição while</b></h2>
+
+    <h2>Selecione o número qual deseja vem a tabuada</h2>
+
+    <select name="" id="slct_1">
+
+        <option value="0"> </option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+
+    </select>
+
+    <h2>Até que número a tabuada deve ser construída?</h2>
+
+    <input type="text" id="input_1">
+
+
+
+
+    <button onclick="contar()">Iniciar corrida!</button>
+
+    <div id="div_msg" style="background-color: blue;">
+        
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function contar() {
+
+        contador = 0
+
+        var tabuada = Number(slct_1.value)
+
+        var limite = Number(input_1.value)
+
+        var resultado = 0
+
+        div_msg.innerHTML = " "
+
+        while (contador <= limite) {
+
+            if (contador % 2 == 0) {
+
+                resultado = tabuada * contador
+
+                div_msg.innerHTML +=
+                    `<div style="background-color: blue;">
+                        
+                        <h3>${tabuada} x ${contador} = ${resultado}<h3>
+                    
+                    </div>`
+
+            } else {
+
+
+                resultado = tabuada * contador
+
+                div_msg.innerHTML +=
+                    `<div style="background-color: red;">
+                        
+                        <h3>${tabuada} x ${contador} = ${resultado}<h3>
+                    
+                    </div>`
+
+            }
+
+            contador++;
+
+        }
+
+    }
+
+
+</script>
+
+<!-- 
+
+Crie um programa o qual:
+ 
+a) Pergunte, numa input ou lista suspensa (select/option), qual a tabuada que o usuário quer ver na tela (2 a 9);  
+
+b) Pergunte até que número a tabuada deve ser construída;  
+
+c) Ao clicar no botão “Ver Tabuada”, exiba abaixo a tabuada como neste exemplo (considerando que o usuário escolheu a tabuada do 3 e para ir até o 12).   
+
+-->

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+</head>
+<body>
+    
+
+    <h2><b>Estrutura de Repetição while</b></h2>
+
+    <button onclick="contar()">contar</button>
+
+    <div id="div_msg"></div>
+
+</body>
+</html>
+
+<script>
+
+    function contar() {
+
+        div_msg.innerHTML = " "
+
+        for (contador = 0 ;contador <= 15; contador++) {
+            contador++; // contador +=1
+            // contador--; //contador -=
+            div_msg.innerHTML += `${contador}<br>`
+        }
+
+        div_msg.innerHTML += `Contagem finalizada <br>`
+
+    }
+
+
+</script>
