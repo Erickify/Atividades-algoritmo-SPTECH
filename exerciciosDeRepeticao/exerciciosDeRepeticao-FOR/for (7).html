@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+</head>
+
+<body>
+    <center>
+
+        <h1>Insira quantidade de linhas</h1>
+        <input type="text" id="inp_qtd_linha">
+        <br>
+        <br>
+
+        <h1>Insira quantidade de caracteres</h1>
+
+        <input type="text" id="inp_qtd_caractere">
+
+        <br>
+        <br>
+
+        <button onclick="contar()">Contar de 1 a 10</button>
+
+        <br>
+        <br>
+
+        <div id="div_msg">
+
+        </div>
+    </center>
+</body>
+
+</html>
+
+<script>
+
+    function contar() {
+        var msg = ""
+
+        var qtdL = Number(inp_qtd_linha.value)
+        var qtdC = Number(inp_qtd_caractere.value)
+
+
+        for (i = 1; i <= qtdL; i++) {
+
+            frase = ""
+
+            for (var caractere = 1; caractere <= qtdC; caractere++){
+                frase += `${i}`
+
+
+            }
+
+            msg += `${frase}<br>`
+
+
+        }
+
+        div_msg.innerHTML = msg
+
+    }
+
+</script>
+
+<!--
+
+
+
+-->

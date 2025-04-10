@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+</head>
+
+<body>
+    <center>
+
+        <h1>informe quantos depósitos você fez no banco</h1>
+        <input type="text" id="inp_1">
+        <br>
+        <br>
+
+        <h1>informe quanto você depositou no banco</h1>
+        <input type="text" id="inp_2">
+        <br>
+        <br>
+
+
+        <button onclick="contar()">Acompanhar grana</button>
+
+        <br>
+        <br>
+
+        <div id="div_msg">
+
+        </div>
+    </center>
+</body>
+
+</html>
+
+<script>
+
+    function contar() {
+        var msg = ""
+
+        var qtd = Number(inp_1.value)
+
+        var valor = Number(inp_2.value)
+
+        var valorFinal = 0
+ 
+
+
+        for (contador = 1; contador <= qtd; contador++) {
+
+
+            valorFinal += valor
+
+            msg += `${contador}º Mês: R$ ${valorFinal}<br><br>`
+
+
+        }
+
+        msg += `Total guardado: R$${valorFinal}`
+
+        div_msg.innerHTML = msg
+
+    }
+
+</script>
+
+<!--
+
+6. Acompanhando a Poupança
+Crie um programa no qual:   
+a) O usuário informa quantos depósitos ele fez no banco   
+
+b) O usuário informa o valor de cada depósito, pois ele sempre depositava exatamente o mesmo valor   
+
+c) Ao clicar em "Acompanhar grana", deve aparecer o valor, mês a mês, como neste exemplo   
+
+    1º Mês: R$ 500.00   
+
+    2º Mês: R$ 1000.00   
+
+    3º Mês: R$ 1500.00   
+
+    4º Mês: R$ 2000.00   
+
+    5º Mês: R$ 2500.00   
+
+    Total guardado: R$2500.00   
+
+No exemplo acima, o usuário informou 5 depósitos e 500 por depósito. 
+
+-->

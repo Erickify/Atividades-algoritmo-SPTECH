@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+</head>
+
+<body>
+    <center>
+
+        <h1>Insira quantidade de pessoas vão entrar no carro?</h1>
+        <input type="text" id="inp_1">
+        <br>
+        <br>
+        
+        <h1>Insira quantidade maxima de pessoas que podem entrar no carro?</h1>
+        <input type="text" id="inp_2">
+        <br>
+        <br>
+
+        <button onclick="contar()">#Partiu Carona</button>
+
+        <br>
+        <br>
+
+        <div id="div_msg">
+
+        </div>
+    </center>
+</body>
+
+</html>
+
+<script>
+
+    function contar() {
+        var msg = ""
+
+        var pessoas = Number(inp_1.value)
+        var limite = Number(inp_2.value)
+
+            frase = ""
+
+            var contador = 2
+
+            for (frase += `Entrou o 1º passageiro (que é o(a) motorista)<br>`; contador <= pessoas; contador++){
+
+                if (contador > limite) {
+
+                    frase += `O ${contador}º passageiro tera que esperar<br>`
+
+                }else{
+
+                    frase += `Entrou o ${contador}º passageiro<br>`
+
+                }
+                
+
+
+            }
+
+            msg += `${frase}<br>`
+
+
+        div_msg.innerHTML = msg
+
+    }
+
+</script>
+
+<!--
+
+3. Capacidade Flexível
+Incremente a questão anterior de tal forma que:   
+a) Também tenha um campo no qual o usuário indique a capacidade de passageiros que o veículo suporta   
+
+b) Ao clicar no botão, as frases só começam a mostrar que o passageiro terá que esperar quando a capacidade indicada em a) for excedida.  
+
+-->

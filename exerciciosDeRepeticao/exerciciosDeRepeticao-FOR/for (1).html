@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+</head>
+
+<body>
+    <center>
+
+        <h1>Insira quantidade de pessoas vão entrar no carro?</h1>
+        <input type="text" id="inp_1">
+        <br>
+        <br>
+
+        <button onclick="contar()">#Partiu Carona</button>
+
+        <br>
+        <br>
+
+        <div id="div_msg">
+
+        </div>
+    </center>
+</body>
+
+</html>
+
+<script>
+
+    function contar() {
+        var msg = ""
+
+        var pessoas = Number(inp_1.value)
+
+            frase = ""
+
+            var contador = 2
+
+            for (frase += `Entrou o 1º passageiro (que é o(a) motorista)<br>`; contador <= pessoas; contador++){
+                frase += `Entrou o ${contador}º passageiro<br>`
+
+
+            }
+
+            msg += `${frase}<br>`
+
+
+        div_msg.innerHTML = msg
+
+    }
+
+</script>
+
+<!--
+
+2. Carona Compartilhada:   
+a) Pergunte ao usuário quantas pessoas vão entrar no carro   
+
+b) Ao clicar num botão "#Partiu Carona"...   
+
+c) Exiba, debaixo do botão, frases como estas:   
+
+Entrou o 1º passageiro (que é o(a) motorista)   
+
+Entrou o 2º passageiro   
+
+Entrou o 3º passageiro   
+
+Entrou o 4º passageiro   
+
+Entrou o 5º passageiro   
+
+O 6º passageiro terá que esperar!   
+
+O 7º passageiro terá que esperar!   
+
+d) Note que, sempre na frase do 1º passageiro, deve constar ao lado que é motorista   
+
+e) A partir do 6º passageiro, a frase muda, pois o carro só comporta 5 passageiros   
+
+-->

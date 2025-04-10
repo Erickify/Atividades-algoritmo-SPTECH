@@ -31,46 +31,61 @@
 
 <script>
 
-   function contar() {
-     var numeroMaior = Number(inp_1.value)
-    var numeroMenor = Number(inp_2.value)
+    function contar() {
+        var numeroMaior = Number(inp_2.value)
+        var numeroMenor = Number(inp_1.value)
 
-    var contador = numeroMenor;
-
-    var msg = ""
-
-    while (contador <= numeroMaior) {
-
-        if (contador % (3 && 5) == 0) {
-
-            msg += `É TRI!É PENTA!<br>`
-
-            contador++
-        } else if (contador % 3 == 0) {
+        div_msg.innerHTML = ""
 
 
-            msg += `É TRI!<br>`
 
-            contador++
-        } else if (contador % 5 == 0) {
+        if (numeroMaior > numeroMenor) {
+
+            var contador = numeroMenor;
+
+            var msg = ""
+
+            while (contador <= numeroMaior) {
+
+                if (contador % 3 == 0 && contador % 5 == 0) {
+
+                    msg += `${contador} É TRI!É PENTA!<br>`
+
+                   
+                } else if (contador % 5 == 0) {
+
+                    console.log(contador)
 
 
-            msg += `É PENTA!<br>`
+                    msg += `${contador} É PENTA!<br>`
 
-            contador++
+                   
+                } else if (contador % 3 == 0) {
+
+
+                    
+                    msg += `${contador} É TRI!<br>`
+
+                   
+                } else {
+
+                    msg += `${contador}<br>`
+
+                   
+                }
+
+                contador++;
+
+                
+
+            }
+
+            div_msg.innerHTML += msg
         } else {
-
-            msg += `<br>${contador}`
-
-            contador++
+            alert(`Informe um numero descente`)
         }
-
-        div_msg.innerHTML += msg
-
-
     }
-}
-    
+
 
 
 

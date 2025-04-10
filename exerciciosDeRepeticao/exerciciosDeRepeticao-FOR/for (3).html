@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+</head>
+
+<style>
+    img {
+        width: 100px;
+    }
+</style>
+
+<body>
+    <center>
+
+        <h1>Insira quantas "Coca-Cola" você acha que já bebeu na vida</h1>
+        <input type="text" id="inp_1">
+        <br>
+        <br>
+
+        <button onclick="contar()">Ver a quantidade</button>
+
+        <br>
+        <br>
+
+        <div id="div_msg">
+
+        </div>
+    </center>
+</body>
+
+</html>
+
+<script>
+
+    function contar() {
+        var msg = ""
+
+        var limite = Number(inp_1.value)
+
+        var cocas = `<img src=https://superprix.vteximg.com.br/arquivos/ids/226373-600-600/img_1200_1%20-1-.png.png?v=638774026492600000">`
+
+
+
+        for (var contador = 1; contador <= limite; contador++) {
+           msg += `${cocas}$`
+
+
+        }
+
+        div_msg.innerHTML = msg
+
+
+    }
+
+
+
+</script>
+
+<!--
+
+4. Contador de Coca-Colas
+Crie um programa no qual:   
+a) O usuário informe quantas "Coca-Cola" ele acha que já bebeu na vida   
+
+b) Ao clicar em "Ver a quantidade", devem aparecer na tela N garrafinhas (ou latas, se preferir) de "Coca-Cola" uma ao lado da outra, conforme a quantidade informada em a)   
+
+c) Para saber se seu programa está correto, teste algo assim: informe 20 e clique. Depois informe só 3 e clique novamente. Veja se vão aparecer só 3 garrafinhas (ou latas) na tela.   
+
+-->
