@@ -49,8 +49,6 @@
 
     function contar() {
 
-        contador = 0
-
         var tabuada = Number(slct_1.value)
 
         var limite = Number(input_1.value)
@@ -59,7 +57,7 @@
 
         div_msg.innerHTML = " "
 
-        while (contador <= limite) {
+        for (var contador = 1 ;contador <= limite;  contador++) {
 
             if (contador % 2 == 0) {
 
@@ -86,7 +84,7 @@
 
             }
 
-            contador++;
+           
 
         }
 

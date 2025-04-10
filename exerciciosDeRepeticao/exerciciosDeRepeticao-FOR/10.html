@@ -31,16 +31,13 @@
 
     function contar() {
 
-        contador = 0
-
 
         var limite = Number(input_1.value)
 
         div_msg.innerHTML = " "
 
-        while (contador < limite) {
+        for (var contador = 1 ; contador <= limite;  contador++) {
 
-            contador++;
 
             div_msg.innerHTML += `<br><br>Carro dando a ${contador}ª volta 
             
