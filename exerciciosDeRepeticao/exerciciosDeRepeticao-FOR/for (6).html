@@ -10,19 +10,18 @@
 <body>
     <center>
 
-        <h1>Insira quantidade de linhas</h1>
-        <input type="text" id="inp_qtd_linha">
+        <h1>informe quantos depósitos você fez no banco</h1>
+        <input type="text" id="inp_1">
         <br>
         <br>
 
-        <h1>Insira quantidade de caracteres</h1>
-
-        <input type="text" id="inp_qtd_caractere">
-
+        <h1>informe quanto você depositou no banco</h1>
+        <input type="text" id="inp_2">
         <br>
         <br>
 
-        <button onclick="contar()">Contar de 1 a 10</button>
+
+        <button onclick="contar()">Acompanhar grana</button>
 
         <br>
         <br>
@@ -40,24 +39,29 @@
     function contar() {
         var msg = ""
 
-        var qtdL = Number(inp_qtd_linha.value)
-        var qtdC = Number(inp_qtd_caractere.value)
+        var qtd = Number(inp_1.value)
+
+        var valor = Number(inp_2.value)
+
+        var valorFinal = 0
+ 
+
+        for (contador = 1; contador <= qtd; contador++) {
 
 
-        for (i = 1; i <= qtdL; i++) {
+            valorFinal += valor
+            
+            if(contador % 3 == 0){
 
-            frase = ""
-
-            for (var caractere = 1; caractere <= qtdC; caractere++){
-                frase += `${i}`
-
-
+                valorFinal = valorFinal + (valorFinal * 0.01)
             }
-
-            msg += `${frase}<br>`
+            
+            msg += `${contador}º Mês: R$ ${valorFinal}<br><br>`
 
 
         }
+
+        msg += `Total guardado: R$${valorFinal}`
 
         div_msg.innerHTML = msg
 
@@ -67,6 +71,24 @@
 
 <!--
 
+7. Bônus Bancário Inteligente
+Refaça o programa anterior de tal forma que: 
+A cada 3 depósitos o banco dê um bônus de 1% sobre o valor acumulado após o depósito. Ex:   
 
+    1º Mês: R$ 500.00   
+
+    2º Mês: R$ 1000.00   
+
+    3º Mês: R$ 1515.00   
+
+    4º Mês: R$ 2015.00   
+
+    5º Mês: R$ 2515.00   
+
+    6º Mês: R$ 3045.15   
+
+    Total guardado: R$3045.15   
+
+Note que nos meses 3 e 6, o valor aumentou em 1% do total após o depósito.   
 
 -->
