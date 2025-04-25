@@ -10,22 +10,23 @@
 <body>
     <center>
 
-        <h1>Insira quantidade de linhas</h1>
-        <input type="text" id="inp_qtd_linha">
+        <h1>informe quantos depósitos você fez no banco</h1>
+        <input type="text" id="inp_1">
         <br>
         <br>
 
-        <h1>Insira quantidade de caracteres</h1>
+        <h1>informe quanto você depositou no banco</h1>
+        <input type="text" id="inp_2">
+        <br>
+        <br>
 
-        <input type="text" id="inp_qtd_caractere">
+
+        <button onclick="contar()">Acompanhar grana</button>
 
         <br>
         <br>
 
-        <button onclick="contar()">Contar de 1 a 10</button>
-
-        <br>
-        <br>
+       
 
         <div id="div_msg">
 
@@ -40,24 +41,38 @@
     function contar() {
         var msg = ""
 
-        var qtdL = Number(inp_qtd_linha.value)
-        var qtdC = Number(inp_qtd_caractere.value)
+        var qtd = Number(inp_1.value)
+
+        var valor = Number(inp_2.value)
+
+        var valorFinal = 0
+ 
+
+        for (contador = 1; contador <= qtd; contador++) {
 
 
-        for (i = 1; i <= qtdL; i++) {
+            valorFinal += valor
+            
+            if(contador % 3 == 0){
 
-            frase = ""
+                valorFinal = valorFinal + (valorFinal * 0.01)
 
-            for (var caractere = 1; caractere <= qtdC; caractere++){
-                frase += `${i}`
+                msg += `${contador}º Mês: R$ ${valorFinal} <img src="https://cdn-icons-png.flaticon.com/512/148/148841.png" alt="" style="height: 20px; width: 20px;"><br><br>`
+
+
+
+            }else{
+
+                msg += `${contador}º Mês: R$ ${valorFinal}<br><br>`
 
 
             }
-
-            msg += `${frase}<br>`
+            
 
 
         }
+
+        msg += `Total guardado: R$${valorFinal}`
 
         div_msg.innerHTML = msg
 
@@ -67,6 +82,8 @@
 
 <!--
 
-
+8. Estrelas de Recompensa
+Refaça o programa anterior de tal forma de que:
+Somente nos meses que ganhou o "bônus", apareça uma imagem de uma estrela bem pequena (reduza a imagem para ficar quase do tamanho da fonte) à direita do valor acumulado.
 
 -->
