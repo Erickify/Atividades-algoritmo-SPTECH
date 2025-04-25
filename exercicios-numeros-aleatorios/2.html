@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeros-Aleatorios</title>
+</head>
+
+<body>
+
+    <h1>Numeros aleatório</h1>
+
+    <button onclick="aleatorizar()">Sortear time</button>
+
+    <!-- <input type="text" name="" id="inp_1" placeholder="ex:32"> -->
+
+    <div id="div_msg">
+
+        <p id="p_msg"></p>
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+
+    function aleatorizar() {
+
+        var min = 1
+        var max = 4
+        var inter = max - min
+
+        var sp = `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Brasao_do_Sao_Paulo_Futebol_Clube.svg/640px-Brasao_do_Sao_Paulo_Futebol_Clube.svg.png" alt="" style="height: 100px; width: 100px;">`
+
+        var pal = `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Palmeiras_logo.svg/800px-Palmeiras_logo.svg.png" alt="" style="height: 100px; width: 100px;">`
+
+        var corin = `<img src="https://static.wikia.nocookie.net/cftu/images/3/31/Corinthians.png/revision/latest/thumbnail/width/360/height/450?cb=20170227180656&path-prefix=pt-br" alt="" style="height: 100px; width: 100px;">`
+
+        var sant = `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Santos_Logo.png/250px-Santos_Logo.png" alt="" style="height: 100px; width: 100px;">`
+
+        var msg = ``
+
+
+        var aleatorio = parseInt(Math.random() * (inter + 1) /* intervalo */ + min /* minimo */) // Retorna 0 a 1 --> nunca sendo 1
+
+        if (aleatorio == 1) {
+
+            msg = `${sp}`
+
+        } else if (aleatorio == 2) {
+
+            msg = `${corin}`
+
+        } else if (aleatorio == 3) {
+
+            msg = `${pal}`
+
+        }else{
+
+             msg = `${sant}`
+
+        }
+
+        div_msg.innerHTML = msg
+
+    }
+
+
+
+</script>
+
+<!--
+
+2. Crie um programa o qual:  
+a) Ao clicar no botão "Sortear time", faz aparecer somente um dos escudos dos 4 times de futebol de maior torcida do estado de São Paulo. Independente da imagem, todas devem ter 150px de altura.  
+
+-->

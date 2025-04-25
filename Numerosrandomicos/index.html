@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeros Randomicos</title>
+</head>
+
+<body>
+
+    <center>
+
+        <h1>Geradores de números aleatorios</h1>
+        <br>
+        Minimo<input type="text" id="inp_min">
+        <br>
+        <br>
+        Maximo<input type="text" id="inp_max">
+        <br>
+        <br>
+        <button onclick="gerar()">numeros aleatorios</button>
+
+        <br>
+        <br>
+
+        <div id="div_msg">
+
+        </div>
+
+
+
+    </center>
+
+</body>
+
+</html>
+
+<script>
+
+    function gerar() {
+
+        msg = ``
+
+        var min = Number(inp_min.value)
+
+        var max = Number(inp_max.value)
+
+        var intervalo = max - min
+
+        if (max >= min) {
+
+            var aleatorio = parseInt(Math.random() * (intervalo+1) /* intervalo */ + min /* minimo */) // Retorna 0 a 1 --> nunca sendo 1
+
+            msg = `
+        
+        <h1> ${aleatorio} </h1>
+
+        `
+        }else{
+
+            alert(`Intervalo invalido`)
+
+        }
+
+        div_msg.innerHTML = msg
+
+    }
+
+</script>

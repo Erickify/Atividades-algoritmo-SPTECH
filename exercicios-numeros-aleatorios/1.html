@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeros-Aleatorios</title>
+</head>
+
+<body>
+
+    <h1>Numeros aleatório</h1>
+
+    <button onclick="aleatorizar()">Sortear</button>
+<!-- 
+    <input type="text" name="" id="inp_1" placeholder="ex:32"> -->
+
+    <div id="div_msg">
+        <p id="p_msg"></p>
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+
+    function aleatorizar() {
+
+        var min = 0
+        var max = 0
+        var inter = max - min
+
+        var msg = ``
+
+
+            var aleatorio = Math.random() // * (intervalo + 1) /* intervalo */ + min /* minimo */) // Retorna 0 a 1 --> nunca sendo 1
+            var arredo = aleatorio.toFixed()
+
+            msg = `
+
+<h1> ${aleatorio.toFixed(4)} </h1>
+<br>
+<hr>
+<h1>Eu arredondaria para ${arredo}</h1>
+
+`
+
+        
+
+        p_msg.innerHTML = msg
+
+    }
+
+    
+
+</script>
+
+<!--
+
+
+1. Crie um programa o qual:  
+a) Ao clicar em um botão "Sortear", apareça na página um número aleatório, entre 0 e 0.9999;  
+
+b) Se esse número for maior que 0.5, exibir, abaixo, a frase "Eu arredondaria para 1".  Caso contrário, exiba "Eu arredondaria para 0". 
+
+-->

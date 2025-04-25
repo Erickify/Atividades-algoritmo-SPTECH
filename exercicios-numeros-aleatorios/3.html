@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeros-Aleatorios</title>
+</head>
+
+<style>
+
+    h1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
+        background-color: black;
+        color: white;
+    }
+
+</style>
+
+<body>
+
+    <h2>Numeros aleatório</h2>
+
+    <button onclick="aleatorizar()">jogar dado</button>
+
+    <!-- <input type="text" name="" id="inp_1" placeholder="ex:32"> -->
+
+    <div id="div_msg">
+        <p id="p_msg"></p>
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+
+    function aleatorizar() {
+
+        var min = 1
+        var max = 20
+        var inter = max - min
+
+        var msg = ``
+
+        if (max >= min) {
+
+            var aleatorio = parseInt(Math.random() * (inter + 1) /* intervalo */ + min /* minimo */) // Retorna 0 a 1 --> nunca sendo 1
+
+            msg = `
+
+<h1> ${aleatorio} </h1>
+
+`
+        } else {
+
+            alert(`Intervalo invalido`)
+
+        }
+
+        p_msg.innerHTML = msg
+
+    }
+
+    
+
+</script>
+
+<!--
+
+3. Crie um programa o qual:  
+a) Tenha um botão "jogar dado";  
+
+b) Ao clicar nele, sorteie um dos 20 números de um dado D20 (Google) e exiba o número sorteado em um quadrado com fundo preto, contendo a letra branca e o número centralizado dentro do quadrado (100px de largura e altura é suficiente); 
+
+-->
