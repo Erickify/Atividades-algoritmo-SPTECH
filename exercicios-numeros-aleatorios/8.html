@@ -1,23 +1,97 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Numeros-Aleatorios</title>
 </head>
+
+<style>
+
+
+</style>
+
 <body>
 
+    <h1>Numeros aleatório</h1>
 
-    
+    <button onclick="aleatorizar()">Sortear Nota para aluno</button>
+
+    <button onclick="ver()">Ver situação do aluno</button>
+
+    <!-- <input type="text" name="" id="inp_1" placeholder="ex:32"> -->
+
+    <div id="div_msg">
+        <p id="p_msg"></p>
+    </div>
+
+
 </body>
+
 </html>
 
 <script>
+
+    var frequencias = freq
+
+    var notas = nota
+
+
+    function aleatorizar() {
+
+        var min = 0
+        var max = 10
+        var inter = max - min
+
+        var msg = ``
+
+        if (max >= min) {
+
+           
+            var nota = (Math.random() * inter /* intervalo */ + min /* minimo */).toFixed(2)
+
+            
+            
+            var freq = (Math.random() * (inter * 10) /* intervalo */ + min /* minimo */).toFixed(2)
+            
+            // if(freq == 100 || freq == 0 ){
+            //     console.log(nota+' '+freq)
+            //     alert(`nota = ${nota}\n freq = ${freq}`)
+            // }
+
+            msg += `<h1> ${nota} </h1>`
+            msg += `<h1> ${freq} </h1>` 
+
+
+        } else {
+
+            alert(`Intervalo invalido`)
+
+        }
+
+        p_msg.innerHTML = msg
+
+    }
+        function ver(){
+
+            alert('nota = '+notas+'\n frequencia = '+frequencias)
+
+        }
+
+    
 
 </script>
 
 <!--
 
+8. Crie um programa o qual:  
+a) Tenha um botão "Gerar uma nota de aluno entre 0 e 10" que faz aparecer, abaixo dele, a nota gerada  
 
+b) Tenha um botão "Gerar uma frequência de aluno entre 0 e 100" que faz aparecer, abaixo dele, a frequência gerada  
+
+c) Deixe todos os valores com 2 casas decimais na tela  
+
+d) Ao clicar no botão “Ver Situação", emitir um alerta com a situação desse aluno. 
 
 -->

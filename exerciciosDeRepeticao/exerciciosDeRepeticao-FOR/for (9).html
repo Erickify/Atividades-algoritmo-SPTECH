@@ -10,15 +10,8 @@
 <body>
     <center>
 
-        <h1>Insira quantidade de linhas</h1>
-        <input type="text" id="inp_qtd_linha">
-        <br>
-        <br>
-
-        <h1>Insira quantidade de caracteres</h1>
-
-        <input type="text" id="inp_qtd_caractere">
-
+        <h1>Insira Sua Idade</h1>
+        <input type="text" id="inp_idade">
         <br>
         <br>
 
@@ -40,21 +33,42 @@
     function contar() {
         var msg = ""
 
-        var qtdL = Number(inp_qtd_linha.value)
-        var qtdC = Number(inp_qtd_caractere.value)
+        var idade = Number(inp_idade.value)
 
 
-        for (i = 1; i <= qtdL; i++) {
+        for (i = 0; i <= idade; i++) {
 
-            frase = ""
 
-            for (var caractere = 1; caractere <= qtdC; caractere++){
-                frase += `${i}`
+            if (i <= 4) {
 
+                msg += `${i} anos (Primeira Infância)<br>`
+
+            } else if (i <= 6) {
+
+                msg += `${i} anos (Pré-escolar)<br>`
+
+            } else if (i <= 10) {
+
+                msg += `${i} anos (Segunda Infância)<br>`
+
+            } else if (i <= 18) {
+
+                msg += `${i} anos (Adolescência)<br>`
+
+            } else if (i <= 50) {
+
+                msg += `${i} anos (Adulto)<br>`
+
+            } else if (i <= 100) {
+
+                msg += `${i} anos (Melhor idade)<br>`
+
+            } else {
+
+                msg += `${i} anos (Matusalém)<br>`
 
             }
-
-            msg += `${frase}<br>`
+            
 
 
         }
@@ -67,6 +81,43 @@
 
 <!--
 
+10. Fases da Vida
+Crie um programa que vá contando a idade do usuário e descrevendo sua fase na vida, considerando que:   
 
+    - Primeira Infância: 0 a 4 anos   
+
+    - Pré-escolar: + de 4 aos 6 anos   
+
+    - Segunda Infância: + de 6 aos 10 anos   
+
+    - Adolescência: + de 10 aos 18 anos   
+
+    - Adulto: + de 18 até os 50 anos   
+
+    - Melhor idade: + de 50 anos até 100 anos   
+
+    - Matusalém: + de 100 anos   
+
+Assim, sua página HTML deve solicitar a idade do usuário. Na medida em que for digitando (pesquise por oninput ou onkeyup), deve aparecer uma contagem de idade e indicação de fase da vida abaixo como neste exemplo:   
+
+   0 anos (Primeira Infância)   
+
+   1 anos (Primeira Infância)   
+
+   2 anos (Primeira Infância)   
+
+   3 anos (Primeira Infância)   
+
+   4 anos (Primeira Infância)   
+
+   5 anos (Pré-escolar)   
+
+   6 anos (Pré-escolar)   
+
+   7 anos (Segunda Infância)   
+
+   ....   
+
+A última linha deve ser a idade informada.   
 
 -->

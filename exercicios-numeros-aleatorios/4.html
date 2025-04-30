@@ -16,7 +16,7 @@
 
     <h1>Numeros aleatório</h1>
 
-    <button onclick="aleatorizar()">jogar dado</button>
+    <button onclick="aleatorizar()">Sortear Nota para aluno</button>
 
     <!-- <input type="text" name="" id="inp_1" placeholder="ex:32"> -->
 
@@ -33,15 +33,21 @@
 
     function aleatorizar() {
 
-        var min = 1
-        var max = 20
+        var min = 0
+        var max = 10
         var inter = max - min
 
         var msg = ``
 
         if (max >= min) {
 
-            var aleatorio = parseInt(Math.random() * (inter + 1) /* intervalo */ + min /* minimo */) // Retorna 0 a 1 --> nunca sendo 1
+            var aleatorio = (Math.random() * inter /* intervalo */ + min /* minimo */).toFixed(1)
+
+            // if(aleatorio == 10 || aleatorio == 0 ){
+            //     console.log(aleatorio)
+            //     alert(`deu ${aleatorio}`)
+            // }
+
 
             msg = `
 

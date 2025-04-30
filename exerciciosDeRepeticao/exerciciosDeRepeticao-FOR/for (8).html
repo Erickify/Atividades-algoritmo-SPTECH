@@ -10,19 +10,11 @@
 <body>
     <center>
 
-        <h1>Insira quantidade de linhas</h1>
-        <input type="text" id="inp_qtd_linha">
+        <h1>FizzBuzz</h1>
         <br>
         <br>
 
-        <h1>Insira quantidade de caracteres</h1>
-
-        <input type="text" id="inp_qtd_caractere">
-
-        <br>
-        <br>
-
-        <button onclick="contar()">Contar de 1 a 10</button>
+        <button onclick="contar()">FizzBuzz</button>
 
         <br>
         <br>
@@ -40,21 +32,32 @@
     function contar() {
         var msg = ""
 
-        var qtdL = Number(inp_qtd_linha.value)
-        var qtdC = Number(inp_qtd_caractere.value)
+        for (i = 1; i <= 100; i++) {
+
+            if((i % 3 == 0) && (i % 5 == 0)){
+
+                msg += `Fizzbuzz<br>`
 
 
-        for (i = 1; i <= qtdL; i++) {
 
-            frase = ""
+            }else if(i % 5 == 0){
 
-            for (var caractere = 1; caractere <= qtdC; caractere++){
-                frase += `${i}`
+                msg += `Buzz<br>`
 
+
+            }else if(i % 3 == 0){
+
+                msg += `Fizz<br>`
+
+
+
+            }else{
+           
+                msg += `${i}<br>`
 
             }
 
-            msg += `${frase}<br>`
+
 
 
         }
@@ -67,6 +70,18 @@
 
 <!--
 
+9. FizzBuzz
+Crie um script em JavaScript que resolva o clássico problema do FizzBuzz e exiba o resultado dentro de uma div na página utilizando innerHTML.
 
+Regras do FizzBuzz:
+Para números de 1 a 100:
+
+Se o número for múltiplo de 3, exiba "Fizz".
+
+Se o número for múltiplo de 5, exiba "Buzz".
+
+Se o número for múltiplo de 3 e 5, exiba "FizzBuzz".
+
+Caso contrário, exiba o próprio número.
 
 -->

@@ -1,23 +1,80 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Numeros-Aleatorios</title>
 </head>
+
+<style>
+
+
+</style>
+
 <body>
 
+    <h1>Numeros aleatório</h1>
 
-    
+    <button onclick="aleatorizar()">Quero um número cabalístico!</button>
+
+    <!-- <input type="text" name="" id="inp_1" placeholder="ex:32"> -->
+
+    <div id="div_msg">
+        <p id="p_msg"></p>
+    </div>
+
+
 </body>
+
 </html>
 
 <script>
+
+    function aleatorizar() {
+
+        var min = 1
+        var max = 15
+        var inter = max - min
+
+        var msg = ``
+
+        if (max >= min) {
+
+            var aleatorio = parseInt(Math.random() * (inter + 1) /* intervalo */ + min /* minimo */)
+
+            if (aleatorio != 3 && aleatorio != 4 && aleatorio != 7 && aleatorio != 10 && aleatorio != 12) {
+
+                msg = `<br>${aleatorio}<br>Ah, me dá um número bom na próxima!`
+
+            }else{
+
+                msg = `<br>${aleatorio}<br>Eu S2 números cabalísticos!`
+
+
+            }
+
+        } else {
+
+            alert(`Intervalo invalido`)
+
+        }
+
+        p_msg.innerHTML = msg
+
+    }
+
+
 
 </script>
 
 <!--
 
+7. Crie um programa o qual:  
+a) Ao clicar no botão "Quero um número cabalístico!", deve sortear e exibir na tela, um número entre 1 e 15  
 
+b) Se o número sorteado for cabalístico (se for o número 3, 4, 7, 10 ou 12), deve aparecer uma frase abaixo do número, dizendo "Eu S2 números cabalísticos!" 
+
+c) Se não for sorteado um número dentre os desejados, deve exibir "Ah, me dá um número bom na próxima!" 
 
 -->

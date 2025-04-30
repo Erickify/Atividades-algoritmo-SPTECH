@@ -1,23 +1,92 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Numeros-Aleatorios</title>
 </head>
+
+<style>
+
+
+</style>
+
 <body>
 
+    <h1>Numeros aleatório</h1>
 
-    
+    <button onclick="aleatorizar()">Sortear momento do dia</button>
+
+    <!-- <input type="text" name="" id="inp_1" placeholder="ex:32"> -->
+
+    <div id="div_msg">
+        <p id="p_msg"></p>
+    </div>
+
+
 </body>
+
 </html>
 
 <script>
 
-</script>
+    function aleatorizar() {
 
+        var min = 0
+        var max = 24
+        var inter = max - min
+
+        var msg = ``
+
+        if (max >= min) {
+
+            var aleatorio = (Math.random() * inter /* intervalo */ + min /* minimo */).toFixed()
+
+        
+            if(aleatorio <= 11){
+
+                 msg = `Bom dia, flor do dia, são ${aleatorio}h!`
+
+            } else if (aleatorio <= 17){
+
+                msg = `Boa tarde, já vai tarde! São ${aleatorio}h!`
+
+                
+            } else {
+
+                msg = `Boa noite, durma bem! São ${aleatorio}h!`
+                
+            }
+            
+        } else {
+
+            alert(`Intervalo invalido`)
+
+        }
+
+        p_msg.innerHTML = msg
+
+    }
+
+    
+
+</script>
 <!--
 
+6. Crie um programa o qual:  
+a) Ao clicar no botão "Sortear momento do dia". Esse botão vai gerar uma hora aleatória entre 0 e 23 (apenas números inteiros).  
 
+b) Em seguida, mostre na tela uma dessas frases:  
+
+     "Bom dia, flor do dia, são Xh!" (caso o horário for entre 0 e 11)  
+
+     "Boa tarde, já vai tarde! São Xh!" (caso o horário for entre 12 e 17)  
+
+     "Boa noite, durma bem! São Xh!" (caso o horário for entre 18 e 23) 
+
+Onde X é um número inteiro sorteado, sem casas decimais. 
+
+    
 
 -->
