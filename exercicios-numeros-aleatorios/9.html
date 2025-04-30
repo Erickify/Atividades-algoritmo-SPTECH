@@ -1,18 +1,93 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Numeros-Aleatorios</title>
 </head>
+
+<style>
+
+
+</style>
+
 <body>
 
+    <h1>Numeros aleatório</h1>
 
-    
+    <button onclick="aleatorizar()">Sortear Nota para aluno</button>
+
+    <button onclick="ver()">Ver Aprovação</button>
+
+    <!-- <input type="text" name="" id="inp_1" placeholder="ex:32"> -->
+
+    <div id="div_msg">
+        <p id="p_msg"></p>
+    </div>
+
+
 </body>
+
 </html>
 
 <script>
+
+    var nota = 0
+
+    var freq = 0
+
+    var msg = ``
+
+
+
+
+
+    function aleatorizar() {
+
+        msg = ``
+
+        nota = (Math.random() * 7).toFixed(1)
+
+
+
+        freq = (Math.random() * 50 /* intervalo */ + 50 /* minimo */).toFixed(1)
+
+        // if(freq == 100 || freq == 0 ){
+        //     console.log(nota+' '+freq)
+        //     alert(`nota = ${nota}\n freq = ${freq}`)
+        // }
+
+        msg += `<h1> ${nota} </h1>`
+        msg += `<h1> ${freq} </h1>`
+
+
+        p_msg.innerHTML = msg
+
+    }
+
+
+
+
+    function ver() {
+
+
+
+        if (nota >= 6 && freq >= 75) {
+
+            msg = `Com nota ${nota} e frequência ${freq}, o aluno está aprovado!`
+
+        }else{
+
+             msg = `Com nota ${nota} e frequência ${freq}, o aluno está reprovado!`
+
+        }
+
+        p_msg.innerHTML = msg
+
+    }
+
+
 
 </script>
 
