@@ -1,23 +1,203 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Numeros-Aleatorios</title>
+    <title>jo ken po</title>
 </head>
+<style>
+    img {
+        height: 200px;
+    }
+</style>
+
 <body>
+    <center>
+        <h1>jo ken po</h1>
+
+        <button onclick="aleatorizar()">jogar</button>
+
+        <!-- <input type="text" name="" id="inp_1" placeholder="ex:32"> -->
+
+        <div id="div_msg">
 
 
-    
+            <p id="p_msg"></p>
+        </div>
+    </center>
+
+
 </body>
+
 </html>
 
 <script>
+
+
+    var pontos1 = 0
+
+    var pontos2 = 0
+
+    function aleatorizar() {
+
+        var min = 1
+        var max = 4
+        var inter = max - min
+
+        var msg = ``
+
+        if (max >= min) {
+
+            var aleatorio1 = parseInt(Math.random() * (inter) /* intervalo */ + min /* minimo */) // Retorna 0 a 1 --> nunca sendo 1
+            var aleatorio2 = parseInt(Math.random() * (inter) /* intervalo */ + min /* minimo */) // Retorna 0 a 1 --> nunca sendo 1
+            var img_jogador1 = ``
+
+            var img_jogador2 = ``
+
+
+
+
+            if (aleatorio1 == 1) { //papel
+
+                var jogada_jogador1 = `papel`
+
+                img_jogador1 = `<img src="https://dicril.com.br/wp-content/uploads/2017/08/papel_higienico-600x600.png" alt="">`
+
+
+            } else if (aleatorio1 == 2) { // Pedra
+
+                var jogada_jogador1 = `pedra`
+
+                img_jogador1 = `<img src="https://sistema.blessrevestimentos.com.br/storage/coating-variations/1716832255-1689773575-314.webp"
+                alt="">
+           `
+
+            } else if (aleatorio1 == 3) { // Tesoura
+
+                var jogada_jogador1 = `tesoura`
+
+                img_jogador1 = `<img src="https://images.tcdn.com.br/img/img_prod/978307/tesoura_tris_barbie_escolar_13cm_laminas_decoradas_sortido_683805_3625_1_7c4957930ee2c75ff588a1370685773d.png"
+                alt="">
+
+`
+
+            }
+
+            if (aleatorio2 == 1) { //papel
+
+                var jogada_jogador2 = `papel`
+
+                img_jogador2 = `<img src="https://dicril.com.br/wp-content/uploads/2017/08/papel_higienico-600x600.png" alt="">`
+
+
+            } else if (aleatorio2 == 2) { // Pedra
+
+                var jogada_jogador2 = `pedra`
+
+                img_jogador2 = `<img src="https://sistema.blessrevestimentos.com.br/storage/coating-variations/1716832255-1689773575-314.webp"
+alt="">
+`
+
+            } else if (aleatorio2 == 3) { // Tesoura
+
+                var jogada_jogador2 = `tesoura`
+
+                img_jogador2 = `<img src="https://images.tcdn.com.br/img/img_prod/978307/tesoura_tris_barbie_escolar_13cm_laminas_decoradas_sortido_683805_3625_1_7c4957930ee2c75ff588a1370685773d.png"
+alt="">
+
+`
+
+            }
+
+            if ((jogada_jogador1 == `tesoura`) && (jogada_jogador2 == `pedra`)) {
+
+                
+                
+                pontos2++
+                msg += `<h1> ${pontos1} | ${pontos2}  </h1>`
+
+            } else if ((jogada_jogador1 == `tesoura`) && (jogada_jogador2 == `papel`)) {
+                
+                
+                pontos1++
+                msg += `<h1> ${pontos1} | ${pontos2}  </h1>`
+
+            } else if ((jogada_jogador1 == `pedra`) && (jogada_jogador2 == `papel`)) {
+
+                
+                pontos2++
+                
+                msg += `<h1> ${pontos1} | ${pontos2}  </h1>`
+            } else if ((jogada_jogador1 == `pedra`) && (jogada_jogador2 == `tesoura`)) {
+                
+                
+                pontos1++
+                msg += `<h1> ${pontos1} | ${pontos2}  </h1>`
+
+            } else if ((jogada_jogador1 == `papel`) && (jogada_jogador2 == `tesoura`)) {
+                
+                
+                pontos2++
+                msg += `<h1> ${pontos1} | ${pontos2}  </h1>`
+
+            } else if ((jogada_jogador1 == `papel`) && (jogada_jogador2 == `pedra`)) {
+
+                
+                pontos1++
+                
+                msg += `<h1> ${pontos1} | ${pontos2}  </h1>`
+
+            } else {
+
+                pontos1++
+                pontos2++
+
+                msg += `<h1> ${pontos1} | ${pontos2}  </h1>`
+
+
+            }
+
+
+
+            msg = `
+
+${img_jogador1} | ${img_jogador2}
+
+<h1> ${jogada_jogador1} | ${jogada_jogador2}  </h1>
+<h1> ${pontos1} | ${pontos2}  </h1>
+
+`
+
+
+
+        } else {
+
+            alert(`Intervalo invalido`)
+
+        }
+
+        p_msg.innerHTML = msg
+
+    }
+
+
 
 </script>
 
 <!--
 
+5. Simulação
+Tente fazer uma pequena simulação do famoso jogo "jo ken po" (pedra, papel e tesoura) em HTML/JS:  
 
+a) Ao clicar no botão "Jogar", deve aparecer abaixo dele ou a figura de uma pedra, de uma folha de papel ou de uma tesoura (seja qual for a imagem, ela deve ter 200px de altura). 
+
+b) Abaixo das imagens, exiba quem venceu e exiba/atualize o placar de vitórias como abaixo: 
+
+     O jogador 1 venceu!  
+
+     Jogador 1: 1 vitória(s) 
+
+     Jogador 2: 0 vitória(s)
 
 -->
