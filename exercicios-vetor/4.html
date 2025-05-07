@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetor</title>
+</head>
+
+<body>
+
+    <center>
+
+        <h1>Cadastrar filme</h1>
+        <br>
+        <input type="text" id="inpt_itens">
+        <br>
+        <br>
+
+        <button onclick="Vetor()">Ver Favoritos</button>
+
+        <div id="div_msg">
+            <p id="p_msg">
+
+            </p>
+
+            <p id="p_msg2">
+
+            </p>
+
+        </div>
+
+    </center>
+
+</body>
+
+</html>
+<script>
+
+    lista = []
+
+     function Vetor(){
+
+        var msg = ''
+
+        var msg2 = ''
+
+        var filme = inpt_itens.value;
+        
+        lista.push(filme) 
+
+
+        for (i = 0; i < lista.length; i++ ){
+
+                msg += ` ${lista[i]}<br>`
+
+                 msg2 = `Total: ${lista.length}<br>`
+
+        }
+
+        p_msg.innerHTML = msg
+        p_msg2.innerHTML = msg2
+        p_msg2.innerHTML += ` O que filme que mais gosta é ${lista[0]}.<br>`
+        p_msg2.innerHTML += ` E desses, o que menos gosta é ${lista[lista.length - 1]}.`
+
+
+    }
+
+
+
+
+
+</script>
+
+<!--
+
+4. Top Filmes Favoritos: Do Mais Amado ao Menos
+Crie um programa o qual:
+
+a) O usuário informa os nomes dos filmes que mais gosta, começando pelo seu favorito e depois o segundo que mais gosta e assim por diante. 
+
+b) Para cadastrar cada filme, ele clica em "Cadastrar filme";
+
+c) Crie um botão "Ver Favoritos" que, ao ser clicado, exibe os filmes favoritos;
+
+d) Exiba também, abaixo de tudo, uma frase assim:  "Total: X";
+
+d.1) Após a frase acima, mostre as seguintes frases: 
+
+ O que filme que mais gosta é A.
+
+ E desses, o que menos gosta é B 
+
+  Obs: "A" é o primeiro filme cadastrado e "B" o último.
+
+-->

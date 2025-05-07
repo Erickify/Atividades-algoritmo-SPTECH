@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetor</title>
+</head>
+
+<body>
+
+    <center>
+
+        <h1>Cadastrar filme</h1>
+        <br>
+        <input type="text" id="inpt_itens">
+        <br>
+        <br>
+
+        <button onclick="Vetor()">Cadastrar Filme</button>
+
+        <div id="div_msg">
+            <p id="p_msg">
+
+                Seu filme favorito: 
+
+            </p>
+
+            <p id="p_msg2">
+
+                Seu 3º filme favorito:
+
+            </p>
+
+            <p id="p_msg3">
+
+                Total de filmes cadastrados: 
+
+            </p>
+
+        </div>
+
+    </center>
+
+</body>
+
+</html>
+<script>
+
+    lista = []
+
+     function Vetor(){
+
+        var filme = inpt_itens.value;
+        
+        lista.push(filme) 
+
+        if(lista.length > 0){
+
+             p_msg.innerHTML = `  Seu filme favorito: ${lista[0]}.`
+
+        }else{
+
+            p_msg.innerHTML = ` Seu filme favorito: `
+
+
+        }
+
+        if(lista.length > 2){
+
+            p_msg2.innerHTML = `Seu 3º filme favorito: ${lista[2]}`
+
+        }else{
+
+            p_msg2.innerHTML = `Seu 3º filme favorito: Ainda não existe`
+
+        }
+
+        p_msg3.innerHTML = `total de filmes cadastrados: ${lista.length }`
+
+
+
+    }
+
+
+
+
+
+</script>
+
+<!--
+
+5. Painel de Favoritos: Seus Filmes em Destaque
+Crie um programa o qual: 
+a) Usuário cadastre os nomes de seus filmes favoritos e adiciona cada um ao clicar em "Cadastrar Filme";
+
+b) Na medida em que vai cadastrando, deve ser exibido ou atualizado um "painel" como neste exemplo: 
+
+  Seu filme favorito: Donnie Darko
+
+  Seu 3º filme favorito: A era do gelo 1 
+
+  Total de filmes cadastrados: 5 
+
+Obs: no "3º filme", caso não tenham sido cadastrados ainda 3 filmes, exibir "Ainda não existe". 
+
+Obs: o "Filme favorito" é o primeiro cadastrado.
+-->

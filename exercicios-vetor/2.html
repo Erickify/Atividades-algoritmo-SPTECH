@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetor</title>
+</head>
+
+<body>
+
+    <center>
+
+        <h1>Destino de viagem</h1>
+        <br>
+        <input type="text" id="inpt_itens">
+        <br>
+        <br>
+
+        <button onclick="Vetor()">Adicionar</button>
+
+        <br>
+        <br>
+
+        <button onclick="viagem1()">Primeira viagem</button>
+        <p id="p_msg1"></p>
+        <button onclick="viagem2()">Terceira viagem</button>
+        <p id="p_msg2"></p>
+        <button onclick="viagem3()">Ultima Viagem</button>
+        <p id="p_msg3"></p>
+
+        <div id="div_msg">
+            <p id="p_msg">
+
+            </p>
+        </div>
+
+    </center>
+
+</body>
+
+</html>
+<script>
+
+
+
+    lista = []
+
+    var produto = '';
+
+
+    function Vetor() {
+
+        produto = inpt_itens.value;
+        lista.push(produto)
+
+    }
+
+    function viagem1() {
+
+        var msg = ''
+
+        if (lista.length > 0) {
+
+            msg = lista[0]
+
+            p_msg1.innerHTML = msg
+
+        } else {
+
+            msg = `Ainda não viajou`
+
+            p_msg1.innerHTML = msg
+
+        }
+
+
+    }
+
+
+    function viagem2() {
+
+        var msg = ''
+
+        if (lista.length > 2) {
+
+            msg = lista[1]
+
+            p_msg2.innerHTML = msg
+
+        } else {
+
+            msg = `Ainda não viajou`
+
+            p_msg2.innerHTML = msg
+
+        }
+
+
+    }
+
+
+    function viagem3() {
+
+        var msg = ''
+
+        if (lista.length > 0) {
+
+            console.log('Passou')
+
+            msg = lista[lista.length - 1]
+
+            p_msg3.innerHTML = msg
+
+        } else {
+
+            msg = `Ainda não viajou`
+
+            p_msg3.innerHTML = msg
+
+        }
+
+
+    }
+
+
+
+
+
+
+</script>
+
+<!--
+
+2. Diário de Viagens: Do Primeiro ao Último Destino
+Crie um programa o qual: 
+a) Tenha um campo "Destino de viagem" e um botão "Adicionar";
+
+b) Ao clicar no botão, esse destino deve ser adicionado a uma lista (que não aparece para o usuário). 
+
+Obs: Não existe problema em serem registrados valores repetidos.
+
+c) Devem haver os botões: 
+
+  "Primeira viagem" - Ao ser clicado, aparece abaixo o primeiro local cadastrado ou "Ainda não viajou" - caso nenhuma (zero viagens) viagem tenha sido registrada;
+
+  "Terceira viagem" - Ao ser clicado, aparece abaixo o terceiro local cadastrado ou "Ainda fez a terceira viagem", caso não tenha feito, ao menos, três viagens;
+
+  "Última viagem" - Ao ser clicado, aparece abaixo o último local cadastrado ou "Ainda não viajou", caso nenhuma (zero viagens) viagem tenha sido registrada.
+
+-->

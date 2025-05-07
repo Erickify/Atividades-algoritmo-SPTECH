@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetor</title>
+</head>
+
+<body>
+
+    <center>
+        
+    <h1>Insira uma fruta na sexta</h1>
+    <br>
+    <input type="text" id="inpt_itens">
+    <br>
+    <br>
+
+    <button onclick="Vetor()">Cadastrar bairro</button>
+
+    <br>
+    <br>
+
+    <input type="text" id="inpt_indice">
+
+    <br>
+    <br>
+
+    <button onclick="Vetor2()">Relembrar moradia</button>
+
+    <div id="div_msg">
+        <p id="p_msg">
+
+        </p>
+    </div>
+
+    </center>
+
+</body>
+
+</html>
+<script>
+
+
+lista = []
+
+var produto = '';
+
+
+function Vetor() {
+
+    produto = inpt_itens.value;
+    lista.push(produto)
+
+
+}
+
+function Vetor2(){
+
+    indice = inpt_indice.value
+
+    var msg = ''
+
+    if(lista.length + 1 > indice){
+
+        msg = lista[indice - 1]
+
+    }else{
+
+        msg = `Você ainda não morou num ${indice}º bairro!`
+
+    }
+
+    p_msg.innerHTML = msg
+
+
+}
+       
+
+
+
+
+
+
+
+
+
+</script>
+
+<!--
+
+3. Relembrando Moradias: Onde Você Já Viveu?
+Crie um programa o qual:
+a) O usuário vá cadastrando os bairros onde morou; Ele digitará o nome do lugar em um campo e clicará em "Cadastrar bairro". 
+
+b) Deve haver um outro campo, em que digita apenas um número, indicando o local onde morou, a partir do número 1 (porque os usuários comuns contam as coisas assim).
+
+c) Após clicar em "Relembrar moradia", faça: 
+
+c.1) Se ele informar "1", exiba o primeiro bairro cadastrado; Se informar "2", exiba o segundo bairro cadastrado e assim por diante ... 
+
+c.2) Porém, ao informar um número maior do que a quantidade de bairros cadastrados, exiba: 
+
+"Você ainda não morou num Xº bairro!" 
+-->

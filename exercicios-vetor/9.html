@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetor</title>
+</head>
+
+<body>
+
+    <center>
+
+        <h1>Lista de Projetos</h1>
+        <br>
+        <input type="text" id="inpt_itens">
+        <br>
+        <br>
+
+        <button onclick="Vetor()">Registrar projeto</button>
+
+        <div id="div_msg">
+            <p id="p_msg">
+
+
+
+            </p>
+        </div>
+
+    </center>
+
+</body>
+
+</html>
+<script>
+
+
+
+    lista = []
+
+    function Vetor() {
+
+        var produto = inpt_itens.value;
+
+        var msg = ''
+
+        lista.push(produto)
+
+        for (i = lista.length; i > 0; i--) {
+
+            msg += ` ${lista[i - 1]}<br>`
+
+        }
+
+        p_msg.innerHTML = msg
+
+
+
+    }
+
+
+
+
+</script>
+
+
+<!--
+
+9. Cadastro de Projetos e Classificação de Experiência Profissional
+Crie um programa o qual: 
+a) Pergunte ao usuário o nome de cada projeto que já criou na vida. Ele digita e clica em "Registrar projeto". Na medida em que vai cadastrando, verifique quantos projetos já foram cadastrados e exiba o seguinte texto abaixo:  
+
+     Você já fez X projetos. Por isso você é um profissional Z  
+
+     X é a quantidade de projetos e Z é seu nível de experiência, segundo estas regras:  
+
+     0 a 4: Júnior  
+
+     5 a 12: Pleno  
+
+     13 ou mais: Sênior  
+
+b)  Tenha um botão “Mostrar Projetos” que quando clicado mostra os projetos cadastrados, um abaixo do outro, em ordem inversa ao que foi cadastrado. 
+
+-->
