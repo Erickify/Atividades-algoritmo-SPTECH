@@ -18,10 +18,12 @@
         <br>
 
         <button onclick="Vetor()">Registrar projeto</button>
+        <button onclick="mostrarVetor()">Mostrar Projetos</button>
 
         <div id="div_msg">
             <p id="p_msg">
 
+                Você já fez 0 projetos.
 
 
             </p>
@@ -42,9 +44,29 @@
 
         var produto = inpt_itens.value;
 
-        var msg = ''
-
         lista.push(produto)
+
+        if (lista.length > 0 && lista.length <= 4) {
+
+            p_msg.innerHTML = `Você já fez ${lista.length} projetos. Por isso você é um profissional Junior`
+
+        } else if (lista.length <= 12) {
+
+            p_msg.innerHTML = `Você já fez ${lista.length} projetos. Por isso você é um profissional Pleno`
+
+        } else {
+
+            p_msg.innerHTML = `Você já fez ${lista.length} projetos. Por isso você é um profissional Sênior`
+
+        }
+
+
+
+    }
+
+    function mostrarVetor() {
+
+        var msg = ''
 
         for (i = lista.length; i > 0; i--) {
 
@@ -53,9 +75,6 @@
         }
 
         p_msg.innerHTML = msg
-
-
-
     }
 
 

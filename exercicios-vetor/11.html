@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetor</title>
+</head>
+
+<body>
+
+    <center>
+
+        <h1>Insira preço do Produto</h1>
+        <br>
+        <input type="text" id="inpt_itens">
+        <br>
+        <br>
+
+        <button onclick="Vetor()">Cadastrar</button>
+        <br>
+        <br>
+        <button onclick="mostrarVetor()">Pesquisar</button>
+
+        <div id="div_msg">
+            <p id="p_msg">
+
+
+            </p>
+        </div>
+
+    </center>
+
+</body>
+
+</html>
+<script>
+
+    lista = []
+
+    function Vetor() {
+
+        var produto = Number(inpt_itens.value);
+
+        lista.push(produto)
+
+
+    }
+
+    function mostrarVetor() {
+
+        var msg = ''
+
+        var produtos = 0
+
+        for (i = lista.length - 1; i >= 0; i--) {
+
+            msg += ` ${lista[i - 1]}<br>`
+
+            produtos += lista[i]
+
+        }
+
+        p_msg.innerHTML = msg
+
+        p_msg.innerHTML = ` Você tem ${lista.length} produtos cadastrados em estoque<br>Seu estoque vale R$${produtos} `
+
+
+    }
+
+
+
+
+
+
+
+</script>
+
+
+<!--
+
+11. Controle de Estoque de Produtos com Cálculo de Valor Total
+Crie um programa o qual:  
+a) Pergunte ao usuário o preço de um produto; 
+
+b) Ao clicar em "Cadastrar", o preço fica cadastrado num lugar que o usuário não vê; 
+
+c) Ao clicar em "Atualizar Estoque", deve aparecer a lista de preços cadastrados (em ordem inversa) e um texto como este abaixo:  
+
+   Você tem X produtos cadastrados em estoque  
+
+   Seu estoque vale R$Y 
+
+Em que X é a quantidade de produtos cadastrados pelo usuário e Y é a soma de todos os valores. 
+
+-->
