@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetor</title>
+</head>
+
+<body>
+
+    <center>
+
+        <h1>digite o nome do produto</h1>
+        <br>
+        <input type="text" id="inpt_nome">
+        <br>
+        <h1>digite o preço do produto</h1>
+        <br>
+        <input type="text" id="inpt_preco">
+        <br>
+
+        <button onclick="cadastar()">Cadastrar Produto</button>
+
+        <button onclick="relatorio()">Relatorio</button>
+
+
+        <div id="div_msg">
+            <p id="p_msg">
+
+
+            </p>
+        </div>
+
+    </center>
+
+</body>
+
+</html>
+<script>
+
+    nomes = []
+
+    precos = []
+
+    function cadastar() {
+
+        var nome = inpt_nome.value
+        var preco = Number(inpt_preco.value)
+
+        nomes.push(nome)
+        precos.push(preco)
+
+
+
+
+    }
+
+    function relatorio() {
+
+        var max = precos[0]
+        var min = precos[0]
+
+        var nome_max = nomes[0]
+        var nome_min = nomes[0]
+
+        var preco_total = 0
+
+        var msg = ''
+
+        var msg2 = `
+                Total de produtos ${nomes.length}
+                
+                `
+
+        for (i = 0; i < nomes.length; i++) {
+
+            preco_total += precos[i] 
+
+
+            var preco_compra = precos[i]
+
+            if(precos[i] > max){
+
+                max = precos[i]
+                nome_max = nomes[i]
+
+            }else if(precos[i] < min){
+
+                min = precos[i]
+                nome_min = nomes[i]
+
+            }
+
+            msg += ` produto ${i + 1}: ${nomes[i]}<br>
+            Preço de compra: R$${preco_compra}. Vender por R$${preco_compra * 1.25}<br>
+          <br>`
+
+
+        }
+
+        p_msg.innerHTML = `${msg2}<br>${msg} ${nome_max} é o produto mais caro <br>
+            ${nome_min} é o numero mais barato<br>
+             o valor total de todos os produtos é R$${preco_total}<br>
+            R$${preco_total / (precos.length)} é o preço médio do preduto
+            <br>`
+
+    }
+
+
+
+
+
+
+</script>
+
+
+<!--
+
+
+16. Sistema Avançado de Estoque com Análise de Produtos e Estatísticas
+Refaça a 15ª questão de tal forma que, ao final do relatório, o programa exiba:  
+
+a) O nome do produto mais caro; 
+
+b) O nome do produto mais barato; 
+
+c) A soma dos preços de compra dos produtos; 
+
+d) A média de preço de venda dos produtos. 
+
+
+
+-->

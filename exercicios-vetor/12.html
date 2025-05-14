@@ -11,16 +11,16 @@
 
     <center>
 
-        <h1>Insira preço do Produto</h1>
+        <h1>Insira o nome de um dos seus filhos</h1>
         <br>
-        <input type="text" id="inpt_itens">
+        <input type="text" id="inpt_filho">
         <br>
         <br>
 
-        <button onclick="Vetor()">Cadastrar</button>
+        <button onclick="filhos()">Cadastrar</button>
         <br>
         <br>
-        <button onclick="mostrarVetor()">Pesquisar</button>
+        <button onclick="mostrarVetor()">Atualizar Família</button>
 
         <div id="div_msg">
             <p id="p_msg">
@@ -38,11 +38,27 @@
 
     lista = []
 
-    function Vetor() {
+    function filhos() {
 
-        var produto = Number(inpt_itens.value);
+        var filho = inpt_filho.value
 
-        lista.push(produto)
+        if (lista[0] == null) {
+
+            lista.push(inpt_filho.value)
+
+
+        } else {
+
+            var repete = false
+
+
+        
+
+        }
+
+
+
+
 
 
     }
@@ -51,19 +67,20 @@
 
         var msg = ''
 
-        var produtos = 0
+        var filhos = 0
 
-        for (i = lista.length - 1; i >= 0; i--) {
+        for (i = 0; i < lista.length; i++) {
 
-            msg += ` ${lista[i - 1]}<br>`
-
-            produtos += lista[i]
+            filhos++
 
         }
 
+        msg = `você tem ${lista.length} filhos<br>`
+
+
         p_msg.innerHTML = msg
 
-        p_msg.innerHTML = ` Você tem ${lista.length} produtos cadastrados em estoque<br>Seu estoque vale R$${produtos} `
+        p_msg.innerHTML += `Seu custo mensal será aproximadamente R$${filhos * 3000} se colocá-los em escola particular ou R$${filhos * 1500} se eles estudarem em escola pública`
 
 
     }

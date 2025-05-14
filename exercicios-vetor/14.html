@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetor</title>
+</head>
+
+<body>
+
+    <center>
+
+        <h1>digite qualquer numero</h1>
+        <br>
+        <input type="text" id="inpt_numero">
+        <br>
+        <br>
+
+        <button onclick="Vetor()">Analizar Historico</button>
+
+        <div id="div_msg">
+            <p id="p_msg">
+
+
+            </p>
+        </div>
+
+    </center>
+
+</body>
+
+</html>
+<script>
+
+    lista = []
+
+    function Vetor() {
+
+        var numero = Number(inpt_numero.value);
+
+        lista.push(numero)
+
+        var msg = ''
+
+        var max = lista[0]
+
+        var min = lista[0]
+
+        for (i = 0; i < lista.length; i++) {
+
+            var numero_atual = lista[i]
+
+            msg += ` ${i + 1}º Numero: ${lista[i]}<br>`
+
+            if(numero_atual > max){
+
+                max = numero_atual
+
+            }else if(numero_atual < min){
+
+                min = numero_atual
+
+
+            }
+
+        }
+
+        p_msg.innerHTML = `${msg} max: ${max}<br> min: ${min}`
+
+
+    }
+
+
+
+
+
+
+</script>
+
+
+<!--
+
+14. Registro de Números com Histórico, Maior e Menor Valor
+Crie um programa o qual:  
+
+a) Tenha um campo "Digite um número qualquer";  
+
+b) Tenha um botão "Analisar histórico" que ao ser clicado, o número é cadastrado em algum lugar e, em seguida, deve aparecer um histórico dos números cadastrados, bem como o maior e o menor, como no exemplo a seguir:  
+
+   1º Número: 15  
+
+   2º Número: 22  
+
+   3º Número: 19  
+
+   4º Número: 5  
+
+   Maior: 22  
+
+   Menor: 5  
+
+
+-->

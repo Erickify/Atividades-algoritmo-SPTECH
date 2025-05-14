@@ -13,14 +13,14 @@
 
         <h1>Lista de Linhas de Onibus</h1>
         <br>
-        <input type="text" id="inpt_itens">
+        <input type="text" id="inpt_linhas">
         <br>
         <br>
 
         <button onclick="Vetor()">Gravar busão</button>
         <br>
         <br>
-        <input type="text" name="" id="inpt_item">
+        <input type="text" name="" id="inpt_linha_pesquisa">
         <br>
         <br>
         <button onclick="Pesquisar()">Pesquisar</button>
@@ -28,7 +28,7 @@
         <div id="div_msg">
             <p id="p_msg">
 
-                Você já fez 0 projetos.
+
 
 
             </p>
@@ -47,15 +47,15 @@
 
     function Vetor() {
 
-        var produto = inpt_itens.value;
+        var linha = inpt_linhas.value;
 
-        lista.push(produto)
+        lista.push(linha)
 
         var msg = ''
 
-        for (i = lista.length; i > 0; i--) {
+        for (i = lista.length - 1; i >= 0; i--) {
 
-            msg += ` ${lista[i - 1]}<br>`
+            msg += ` ${lista[i]}<br>`
 
         }
 
@@ -64,39 +64,40 @@
 
     function Pesquisar() {
 
-        linha = inpt_item.value
+        pesquisa = inpt_linha_pesquisa.value
 
         var msg = ''
 
         var qtd = 0
 
-        if (lista.includes(linha)) {
+        pesquisas = []
 
-            for (var i = 0; lista.length > i; i++) {
 
-                if (lista[i] == linha) {
 
-                    msg += `${i + 1},`
+        for (var i = 0; lista.length > i; i++) {
 
-                    qtd++
+            if (lista[i] == pesquisa) {
 
-                }
-
+                pesquisas.push(i + 1)
 
 
             }
 
-            p_msg.innerHTML = `Você já pegou essa linha ${qtd} vezes, nessa ordem: ${msg}`
-
-
-        } else {
-
-
-            p_msg.innerHTML = `Você nunca pegou essa linha`
-
         }
 
-    }
+
+
+            p_msg.innerHTML = `Você já pegou essa linha ${pesquisas.length} vezes, nessa ordem: ${pesquisas}`
+
+
+            if (pesquisas.length == 0) {
+
+
+                p_msg.innerHTML = `Você nunca pegou essa linha`
+
+            }
+
+        }
 
 
 

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetor</title>
+</head>
+
+<body>
+
+    <center>
+
+        <h1>digite o nome do produto</h1>
+        <br>
+        <input type="text" id="inpt_nome">
+        <br>
+        <h1>digite o preço do produto</h1>
+        <br>
+        <input type="text" id="inpt_preco">
+        <br>
+
+        <button onclick="cadastar()">Cadastrar Produto</button>
+
+        <button onclick="relatorio()">Relatorio</button>
+
+
+        <div id="div_msg">
+            <p id="p_msg">
+
+
+            </p>
+        </div>
+
+    </center>
+
+</body>
+
+</html>
+<script>
+
+    nomes = []
+
+    precos = []
+
+    function cadastar() {
+
+        var nome = inpt_nome.value
+        var preco = inpt_preco.value
+
+        nomes.push(nome)
+        precos.push(preco)
+
+
+
+
+    }
+
+    function relatorio() {
+
+        
+                    var msg = ''
+        
+                    var msg2 = `
+                Total de produtos ${nomes.length}
+                
+                `
+
+        for (i = 0; i < nomes.length; i++) {
+
+
+
+            var preco_compra = precos[i]
+
+            msg += ` produto ${i + 1}: ${nomes[i]}<br>
+            Preço de compra: R$${preco_compra}. Vender por R$${preco_compra * 1.25}<br><br>`
+
+
+        }
+
+        p_msg.innerHTML = `${msg2}<br>${msg}`
+
+    }
+
+
+
+
+
+
+</script>
+
+
+<!--
+
+15. Sistema de Cadastro de Produtos com Relatório de Preço de Venda
+Crie um pequeno sistema de loja eletrônica o qual:  
+
+a) Tenha um campo "Nome do produto" e outro "Preço de compra"; 
+
+b) Tenha um botão "Cadastrar". Ao clicar nele, o nome e preço ficam cadastrados em algum lugar, por enquanto invisível ao usuário  
+
+c) Tenha um botão "Relatório de estoque". Ao clicar nele, deve aparecer uma listagem dos produtos cadastrados com seu valor para venda, como no exemplo a seguir:  
+
+   Total de produtos: 2  
+
+   Produto 1: Leite de arroz  
+
+   Preço de compra: R$1.50. Vender por R$1,87  
+
+   Produto 2: Caixa de chocolates  
+
+   Preço de compra: R$9.00. Vender por R$11,25  
+
+O preço de venda é sempre o valor da compra mais 25%. 
+
+#FicaDica: De repente você pode precisar de 2 vetores aqui ;) 
+
+
+-->

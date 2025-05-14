@@ -20,7 +20,7 @@
         <button onclick="Vetor()">Cadastrar</button>
         <br>
         <br>
-        <button onclick="mostrarVetor()">Pesquisar</button>
+        <button onclick="mostrarVetor()">Atualizar Estoque</button>
 
         <div id="div_msg">
             <p id="p_msg">
@@ -55,7 +55,7 @@
 
         for (i = lista.length - 1; i >= 0; i--) {
 
-            msg += ` ${lista[i - 1]}<br>`
+            msg += ` ${lista[i]}<br>`
 
             produtos += lista[i]
 
@@ -63,7 +63,7 @@
 
         p_msg.innerHTML = msg
 
-        p_msg.innerHTML = ` Você tem ${lista.length} produtos cadastrados em estoque<br>Seu estoque vale R$${produtos} `
+        p_msg.innerHTML += ` Você tem ${lista.length} produtos cadastrados em estoque<br>Seu estoque vale R$${produtos} `
 
 
     }
