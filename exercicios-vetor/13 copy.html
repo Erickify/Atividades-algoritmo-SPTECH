@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <center>
+
+        <h1>Timão</h1>
+
+        <br>
+
+        <h2> Selecione o resultado:</h2>
+
+        <select id="slct_res">
+
+            <option>Vitória</option>
+
+            <option>Empate</option>
+
+            <option>Derrota</option>
+
+        </select><br><br>
+
+        <button onclick="resultado()">Registrar jogo</button><br>
+
+        <br>
+
+        Indique qual jogo deseja saber o resultado:
+
+        <input type="text" id="input_pesquisar" oninput="selecionar()"><br>
+
+        <div id="msg"></div>
+    </center>
+</body>
+
+</html>
+<script>
+
+    var lista = []
+
+    function resultado() {
+        
+        var vitorias = 0
+        
+        var empates = 0
+
+        var derrotas = 0
+        
+        var resultado = slct_res.value
+        
+        lista.push(resultado)
+
+
+        for (var i = lista.length; i > 0; i--) {
+            
+            if (lista[i - 1] == 'Vitória') {
+            
+                vitorias += 1
+            
+            } else if (lista[i - 1] == 'Empate') {
+            
+                empates += 1
+            
+            } else {
+            
+                derrotas += 1
+            
+            }
+            
+            var pontos = vitorias * 3 + empates * 1 + 
+            derrotas * 0
+            
+            var Aproveitamento = (pontos / (lista.length * 3)) * 100
+            
+            msg.innerHTML = `
+            O time teve: ${vitorias} vitórias, ${empates} empates, ${derrotas} derrotas<br>  
+            Pontuação total: ${pontos} pontos<br>  
+            Aproveitamento: ${Aproveitamento}%
+        `
+        }
+    }
+
+    function selecionar() {
+        
+        var pesquisar = Number(input_pesquisar.value)
+        
+        if (pesquisar == ``) {
+
+
+        } else if (pesquisar <= lista.length) {
+        
+            msg.innerHTML = `No ${pesquisar} jogo, o time ${lista[pesquisar - 1]}`
+        
+        } else {
+        
+            msg.innerHTML = `Não foi cadastrado um ${pesquisar}º jogo`
+        
+        }
+
+    }
+
+</script>
+
+<!--
+
+
+13. Controle de Campanha de Time de Futebol com Análise de Aproveitamento
+Crie um programa o qual:  
+
+a) Cadastre a campanha de um time de futebol num campeonato da seguinte forma:  
+
+a.1) Tenha um 'combo' (select/option) identificado com o texto "Indique o resultado" com os itens:  
+
+  Vitória  
+
+  Empate  
+
+  Derrota  
+
+b) Ao clicar num botão "Registrar jogo", o resultado escolhido em a) é registrado em um local invisível ao usuário e um texto abaixo é exibido (ou atualizado). O texto é como este:  
+
+      O time teve: V vitórias, E empates, D derrotas  
+
+      Pontuação total: X pontos  
+
+      Aproveitamento: Y%  
+
+Em que X é calculado assim: Cada vitória (V) vale 3 pontos. Cada empate (E) vale 1 ponto. Cada derrota (D) vale 0 pontos.  
+
+O Y é o total de pontos conquistados (X) dividido pelo total de pontos possíveis (ou seja, considerando que tivesse vencido todos os jogos) vezes 100.  
+
+c) Deve haver um campo "Indique qual jogo deseja saber o resultado". Na medida em que vai digitando, aparece um texto, abaixo do texto de b) como este:  
+
+  No XXº jogo, o time Ganhou (ou "Perdeu" ou "Empatou")  
+
+ou um texto como este, caso o valor seja de um jogo que não foi cadastrado:  
+
+  Não foi cadastrado um XXº jogo  
+
+Obs: Neste item considere que o usuário ache que 1 indica o 1º jogo. Ou seja, o usuário não imagina que o 1º é o jogo "0" na verdade. 
+
+-->

@@ -44,15 +44,32 @@
 
         if (lista[0] == null) {
 
-            lista.push(inpt_filho.value)
+            lista.push(filho)
 
 
         } else {
 
             var repete = false
 
+            for (i = 0; i < lista.length; i++) {
 
-        
+                if (lista[i] === filho) {
+                    repete = true
+                }
+
+            }
+
+            if (repete) {
+
+                alert("Você não pode repetir o nome de filho")
+
+
+            } else {
+
+                lista.push(filho)
+
+            }
+
 
         }
 
