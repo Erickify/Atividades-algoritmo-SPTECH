@@ -1,0 +1,9 @@
+[22:33:25 2025-05-14] FETCHING Version 2.40.7
+[22:33:25 2025-05-14] DOWNLOADING https://github.com/spicetify/cli/releases/download/v2.40.7/spicetify-2.40.7-linux-amd64.tar.gz
+[22:33:27 2025-05-14] EXTRACTING /home/codaboyz/.spicetify/spicetify.tar.gz
+[22:33:27 2025-05-14] SETTING EXECUTABLE PERMISSIONS TO /home/codaboyz/.spicetify/spicetify
+[22:33:27 2025-05-14] REMOVING /home/codaboyz/.spicetify/spicetify.tar.gz
+[22:33:27 2025-05-14] spicetify path already set in /home/codaboyz/.bashrc, continuing...
+[22:33:27 2025-05-14] spicetify path already set in /home/codaboyz/.bash_profile, continuing...
+[22:33:27 2025-05-14] spicetify v2.40.7 was installed successfully to /home/codaboyz/.spicetify
+[22:33:27 2025-05-14] Run 'spicetify --help' to get started

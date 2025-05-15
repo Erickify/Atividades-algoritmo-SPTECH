@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setese</title>
+</head>
+
+<body>
+
+    <center>
+        <h1>Sete e meio</h1>
+        <button id="btn_1" onclick="comprar()">Comprar Carta</button>
+        <button id="btn_2" onclick="passar()">Passar</button>
+        <div class="div_msg">
+            <p id="p_msg"></p>
+        </div>
+    </center>
+
+</body>
+
+</html>
+
+<script>
+
+
+    var naipes = ['Ouro', 'Espadas', 'Paus', 'Copas']
+    var cartasSorteadas = []
+    var naipesSorteadas = []
+    var baralhoSorteada = []
+    var baralho = []
+
+    var totalP = 0
+    var totalB = 0
+
+    function comprar() {
+
+        var carta = 0
+
+        var naipe = 0
+
+        var ja_sorteado = false
+
+        carta = parseInt((Math.random() * 10) + 1)
+
+        naipe = naipes[parseInt((Math.random() * 3))]
+
+        console.log(naipe)
+
+        console.log(carta)
+
+        if (cartasSorteadas.includes(carta) && naipesSorteadas.includes(naipe)) {
+
+            ja_sorteado = true
+
+            carta = 0
+
+            alert('carta já sorteada')
+
+        } else {
+
+            cartasSorteadas.push(carta)
+
+            naipesSorteadas.push(naipe)
+
+            baralho.push(carta, naipe)
+
+            if (carta > 7) {
+                carta = 0.5
+            }
+
+            totalP += carta
+
+        }
+
+        if (totalP > 7.5) {
+
+            alert('Você perdeu, soma das cartas:' + totalP)
+
+            totalP = 0
+
+            cartasSorteadas = []
+
+            naipesSorteadas = []
+
+        } else if (totalP == 7.5) {
+
+            alert('voce ganhou, soma das cartas:' + totalP)
+
+            cartasSorteadas = []
+
+            naipesSorteadas = []
+
+        } else {
+
+            alert('Total de cartas:' + totalP)
+
+        }
+
+
+    }
+
+
+
+</script>
