@@ -15,6 +15,7 @@
         <button id="btn_2" onclick="passar()">Passar</button>
         <div class="div_msg">
             <p id="p_msg"></p>
+            <p id="p_msg2"></p>
         </div>
     </center>
 
@@ -36,6 +37,12 @@
 
     function comprar() {
 
+        p_msg.innerHTML = ''
+
+        p_msg2.innerHTML = ''
+
+        totalB = 0
+
         var carta = 0
 
         var naipe = 0
@@ -44,39 +51,57 @@
 
         carta = parseInt((Math.random() * 10) + 1)
 
-        naipe = naipes[parseInt((Math.random() * 3))]
+        naipe = naipes[parseInt((Math.random() * 4))]
 
         console.log(naipe)
 
         console.log(carta)
 
-        if (cartasSorteadas.includes(carta) && naipesSorteadas.includes(naipe)) {
 
-            ja_sorteado = true
+        cartasSorteadas.push(carta)
 
-            carta = 0
+        naipesSorteadas.push(naipe)
 
-            alert('carta já sorteada')
+        baralhoSorteada.push(carta, naipe)
 
-        } else {
+        baralho.push(carta, naipe)
 
-            cartasSorteadas.push(carta)
+        var cartaExibida = carta
 
-            naipesSorteadas.push(naipe)
+        if (carta == 1) {
+            cartaExibida = 'Ás'
 
-            baralho.push(carta, naipe)
+        } else if (carta == 8) {
 
-            if (carta > 7) {
-                carta = 0.5
-            }
+            cartaExibida = 'Valete'
 
-            totalP += carta
+        } else if (carta == 9) {
+
+            cartaExibida = 'Rainha'
+
+        } else if (carta == 10) {
+
+            cartaExibida = 'Rei'
 
         }
 
+        if (carta > 7) {
+            carta = 0.5
+        }
+
+
+
+        totalP += carta
+
+        p_msg.innerHTML = `Jogador: (${totalP} pontos) - ${cartaExibida} de ${naipe}`
+
+
+
         if (totalP > 7.5) {
 
-            alert('Você perdeu, soma das cartas:' + totalP)
+            console.log('Você perdeu, soma das cartas:' + totalP)
+
+            p_msg.innerHTML = 'Você perdeu, soma das cartas:' + totalP
 
             totalP = 0
 
@@ -84,19 +109,133 @@
 
             naipesSorteadas = []
 
+            baralhoSorteada = []
+
+
         } else if (totalP == 7.5) {
 
-            alert('voce ganhou, soma das cartas:' + totalP)
+            console.log('voce ganhou, soma das cartas:' + totalP)
+
+            p_msg.innerHTML = `SETE E MEIO! O jogador venceu com 7.5 pontos!`
 
             cartasSorteadas = []
 
             naipesSorteadas = []
 
-        } else {
+            baralhoSorteada = []
 
-            alert('Total de cartas:' + totalP)
+
 
         }
+
+
+    }
+
+    function passar() {
+
+        var carta = 0
+
+        var naipe = 0
+
+        var ja_sorteado = false
+
+        while (totalB <= totalP) {
+
+            carta = parseInt((Math.random() * 10) + 1)
+
+            naipe = naipes[parseInt((Math.random() * 4))]
+
+            console.log(naipe)
+
+            console.log(carta)
+
+
+            cartasSorteadas.push(carta)
+
+            naipesSorteadas.push(naipe)
+
+            baralhoSorteada.push(carta, naipe)
+
+            baralho.push(carta, naipe)
+
+            var cartaExibida = carta
+
+            if (carta == 1) {
+                cartaExibida = 'Ás'
+
+            } else if (carta == 8) {
+
+                cartaExibida = 'Valete'
+
+            } else if (carta == 9) {
+
+                cartaExibida = 'Rainha'
+
+            } else if (carta == 10) {
+
+                cartaExibida = 'Rei'
+
+            }
+
+            if (carta > 7) {
+                carta = 0.5
+            }
+
+
+
+            totalB += carta
+
+
+            p_msg2.innerHTML += `Banca: (${totalB} pontos) - ${cartaExibida} de ${naipe} <br>`
+
+
+            if (totalB > 7.5) {
+
+                console.log('Banca perdeu, soma das cartas:' + totalB)
+
+
+                p_msg2.innerHTML += `A BANCA ESTOUROU! O jogador venceu com ${totalP} pontos!`
+
+
+                cartasSorteadas = []
+
+                naipesSorteadas = []
+
+                baralhoSorteada = []
+
+
+            } else if (totalB == 7.5) {
+
+                console.log('Banca ganhou, soma das cartas:' + totalB)
+
+
+                p_msg2.innerHTML = `SETE E MEIO! O banca venceu com 7.5 pontos!`
+
+
+                cartasSorteadas = []
+
+                naipesSorteadas = []
+
+                baralhoSorteada = []
+
+                p_msg2.innerHTML = ``
+
+
+
+            } else if (totalB > totalP) {
+
+
+                p_msg2.innerHTML += `Banca ganhou, soma das cartas: ` + totalB
+
+
+            }
+
+        }
+
+        totalB = 0
+        totalP = 0
+
+
 
 
     }

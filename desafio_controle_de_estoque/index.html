@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Estoque</title>
+</head>
+
+<body>
+<center>
+    
+    nome do produto:
+    <input type="text" id="inp_nome">
+
+
+    codigo do produto:
+    <input type="text" id="inp_codigo">
+
+    quantidade do produto:
+    <input type="text" id="inp_quantidade">
+
+
+    <button onclick="CadastrarProduto()">Cadastrar Produto</button><br><br>
+
+    <button onclick="ReporEstoque()">Repor Estoque</button><br><br>
+
+    <button onclick="VenderProduto()">Vender Produto</button><br><br>
+
+    <button onclick="ExibirRelatório()">Exibir Relatório</button><br><br>
+
+
+    <div id="div_msg">
+
+    </div>
+
+
+</center>
+</body>
+
+</html>
+
+<script>
+
+    lista_nome = []
+    lista_codigo = []
+    lista_quantidade = []
+
+
+    function CadastrarProduto() {
+
+
+
+        var nome = inp_nome.value
+        var codigo = inp_codigo.value
+        var quantidade = Number(inp_quantidade.value)
+
+        if (nome != '' && codigo != '' && quantidade != '') {
+
+            var includes = false
+
+            for (var i = 0; i < lista_codigo.lenght; i++) {
+
+                if (lista_codigo[i] == codigo) {
+
+                    includes = true
+
+                    break;
+                }
+
+            }
+
+            if (includes) {
+
+                div_msg.innerHTML = "Codigo do produto já existe"
+
+            } else {
+
+                lista_nome.push(nome)
+                lista_codigo.push(codigo)
+
+            }
+        } else {
+            div_msg.innerHTML = "Preencha todos os campos"
+        }
+    }
+
+    function VenderProduto() {
+
+
+        var nome = inp_nome.value
+        var codigo = inp_codigo.value
+        var quantidade = Number(inp_quantidade.value)
+
+        var indiceNaLista = -1
+
+        for (var i = 0; i < lista_codigo.lenght; i++) {
+                if(nome == lista_nome[i] && codigo == lista_codigo[i]){
+                    indiceNaLista = i
+                    break
+                }
+        }
+
+        if(indiceNaLista == -1){
+
+            div_msg.innerHTML = `não encontrado`
+
+        }else{ 
+            if(quantidade <= lista_quantidade[indiceNaLista]){
+
+                lista_quantidade[indiceNaLista] -= quantidade;
+
+                div_msg.innerHTML = `Código: AAA | Produto: BBBBB | Quantidade em Estoque: CCC (DDDDD)`
+
+                if(lista_quantidade <= 10){
+                    div_msg = `Poucos Produtos no estoque`
+                }
+
+            }else{
+                div_msg.innerHTML = 'Quantidade Invalida'
+            }
+        }
+
+
+    }
+
+</script>
+
+<!--
+
+Contexto
+Uma grande rede de lojas de eletrônicos decidiu modernizar o sistema de controle de estoque de sua loja virtual. O novo sistema deve ser capaz de realizar operações automáticas de entrada e saída de produtos no estoque, além de emitir alertas quando os produtos atingem quantidades mínimas. Para facilitar a gestão e o planejamento de compras, o sistema deverá processar essas informações de maneira eficiente e apresentar relatórios que auxiliem na tomada de decisão.
+
+Como analista de sistemas, você foi encarregado de desenvolver um sistema para esse controle, sabendo que: 
+
+A loja trabalha com uma lista de produtos  contendo um nome, um código único e sua quantidade em estoque.
+O estoque deve ser atualizado conforme as vendas e reposições desses produtos.
+A loja trabalha como o mínimo de 10 unidades de cada produto registrado em seu estoque, onde caso fique abaixo do limite, o sistema deve emitir um alerta indicando que é hora de repor o estoque.
+O sistema não deve permitir as vendas que sejam maiores que a quantidade em estoque, assim como a loja não pode vender sem estoque suficiente.
+De acordo com o contexto acima, crie um programa o qual: 
+
+Tenha um campo para registrar o nome, o código e a quantidade de produto (apenas números). 
+
+Tenha quatro botões: "Cadastrar Produto", "Repor Estoque", "Vender Produto" e "Exibir Relatório". 
+
+- Cadastro de Produto: O sistema deve cadastrar o produto, registrando seu nome, código e quantidade em estoque. Caso os campos estejam todos preenchidos, a quantidade seja acima do mínimo e o código do produto ainda não exista no estoque, exiba "Produto NOME_DO_PRODUTO registrado com sucesso", mas caso contrário, exiba "Preencha todos os campos para registrar um novo produto" ou "Código de produto já existente", de acordo com a validação. 
+
+- Reposição de Estoque: O sistema deve processar as reposições, aumentando a quantidade em estoque do produto especificado. Cada reposição envolve o código e o nome do produto, além da quantidade reposta. Caso o código e nome sejam identificados corretamente e a quantidade seja um acima de 0, exiba "9999x do NOME_DO_PRODUTO foi reposto com sucesso", mas caso contrário, exiba "Produto não identificado" ou "Quantidade inválida", de acordo com a validação.
+
+- Venda de Produtos: O sistema deve ser capaz de processar uma quantidade indefinida de vendas, reduzindo a quantidade de produtos no estoque. Cada venda envolve o código e o nome do produto, além da quantidade vendida. Caso o código e nome sejam identificados corretamente e a quantidade em estoque seja suficiente para a venda, exiba "9999x do NOME_DO_PRODUTO foi vendido com sucesso", mas caso contrário, exiba "Produto não identificado" ou "Quantidade inválida", de acordo com a validação. 
+Ao final de cada venda, o sistema deve verificar se algum produto ficou abaixo da quantidade mínima. Caso isso ocorra, o sistema deve emitir uma mensagem de alerta para reposição urgente daquele produto.
+
+          Depois de cada operação de VENDA ou REPOSIÇÃO, o sistema deve exibir um relatório que mostra:
+
+                "Código: AAA | Produto: BBBBB | Quantidade em Estoque: CCC (DDDDD)" 
+
+          Se algum produto está abaixo do mínimo, exibir mensagem em DDDDD indicando que ele precisa ser reposto ou se o estoque está OK.
+
+- Exibir Relatório: O sistema deve exibir um relatório do estoque, como o abaixo: 
+
+    "Código: ABZ | Produto: Arroz | Quantidade em Estoque: 12 (OK)" 
+
+    "Código: ABPSC | Produto: Feijão | Quantidade em Estoque: 4 (Precisa Repor)" 
+
+    "Código: 123A | Produto: Caneta | Quantidade em Estoque: 75 (OK)" 
+
+    "Código: EHFD | Produto: Caderno | Quantidade em Estoque: 2 (Precisa Repor)" 
+
+Restrições:
+Não utilizar indexOf, includes e JSON
+Desafio:
+Exibir no relatório as seguintes informações:
+
+Produto com maior quantidade em estoque
+Produto com menor quantidade em estoque
+Produto mais vendido
+Produto menos vendido
+Adicionar um novo botão remover produto que remove um produto de todas as listas. Utilize o método .splice() passando o índice que deseja remover e a quantidade de itens que deseja remover.
+
+Dicas e Observações:
+Trabalhe com 3 vetores, onde cada vetor é responsável por apenas 1 tipo de informação (nome, código ou preço), podendo associar as informações através dos índices.
+Por exemplo, se registrarmos o primeiro produto sendo o nome "Feijão", código "ABC123" e preço "10", cada informação representa a posição 0 do seu respectivo vetor, por ser o primeiro registro.
+Com isso, conseguimos manipular os 3 vetores utilizando o mesmo índice, para obter as informações referentes ao mesmo produto. 
+
+Para remover algum produto do vetor, pode-se utilizar o método .splice(), como:
+
+    var itens= ['a', 'b', 'c']
+    itens.splice(0, 1); // Remove apenas um item a partir da posição 0;
+   // o valor de itens agora é ['b', 'c']
+
+-->
