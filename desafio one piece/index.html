@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <section>
+        <h2>
+            Cadastrar Estoque de Comidas
+        </h2>
+        <label>
+            Nome da Comida:
+            <input type="text" id="inpt_comida">
+        </label>
+        <button onclick="cadastar()">Cadastrar</button>
+        <button onclick=" verificar()">verificar</button>
+    </section>
+
+    <br>
+    <hr>
+    <br>
+
+    <section>
+        <h2>
+            pesquisar Estoque de Comidas
+        </h2>
+        <label>
+            Pesquisar:
+            <input type="text" id="inpt_pesquisa">
+        </label>
+        <button onclick="pesquisa()">pesquisar</button>
+        <button onclick=" exibir()">exibir</button>
+
+    </section>
+
+    <div id="div_msg">
+
+        <p id="p_msg">
+
+        </p>
+
+    </div>
+
+</body>
+
+</html>
+<script>
+
+    var lista_estoque = []
+
+    function cadastar() {
+
+        comida = inpt_comida.value
+
+        lista_estoque.push(comida)
+
+    }
+
+    function verificar() {
+        var quantidade_estoque = lista_estoque.length
+
+        if (quantidade_estoque < 3) {
+            p_msg.innerHTML = "Desse jeito, o Luffy devora até o navio";
+        }
+
+        if (quantidade_estoque <= 7) {
+            p_msg.innerHTML = "O comilão do Luffy não vai deixar sobrar nenhuma comida";
+        }
+        if (quantidade_estoque <= 10) {
+            p_msg.innerHTML = "Assim, talvez sobre um pouco para a tripulação";
+        }
+        if (quantidade_estoque > 10) {
+            p_msg.innerHTML = "Desse jeito vai ter comida para todo mundo e ainda consigo guardar um pouco para a senhorita Nami!"
+        }
+    }
+
+    function pesquisa() {
+
+        msg = ``
+
+        pesquisa = inpt_pesquisa.value
+
+        if (lista_estoque.includes(pesquisa)) {
+
+            var unidades = 0
+
+            for (var i = 0; i < lista_estoque.length; i++) {
+
+                if (lista_estoque[i] == pesquisa) {
+
+                    unidades++
+
+                }
+
+            }
+
+            msg = `Temos a comida ${pesquisa} e há ${unidades} unidade(s) dela`
+
+        } else {
+
+            msg = `Alguém vai ter que comprar ${pesquisa}, tá fazendo falta...`
+
+        }
+
+
+        p_msg.innerHTML = msg
+
+
+    }
+
+    function exibir() {
+
+        var msg = ``
+
+
+        pesquisa = inpt_pesquisa.value
+
+
+        produtos_a_exibir = []
+
+        unidades_a_exibir = []
+
+
+        for (var i = 0; i < lista_estoque.length; i++) {
+            var comida_atual_i = lista_estoque[i]
+
+            if (produtos_a_exibir.includes(comida_atual_i)) {
+                var indice_produto = produtos_a_exibir.indexOf(comida_atual_i)
+                unidades_a_exibir[indice_produto]++
+            } else {
+                produtos_a_exibir.push(comida_atual_i);
+                unidades_a_exibir.push(1)
+            }
+
+        }
+
+        for (var i = 0; i < produtos_a_exibir.length; i++) {
+            if (unidades_a_exibir[i] == 1) {
+                p_msg.innerHTML = ` ${pesquisa} (${unidades_a_exibir} unidade)`
+            } else {
+                p_msg.innerHTML = ` ${pesquisa} (${unidades_a_exibir} unidades)`
+
+            }
+        }
+
+        
+    }
+    // inpt_pesquisa.value
+
+</script>
